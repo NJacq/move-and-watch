@@ -1,2 +1,13 @@
-# RewriteEngine On
-# RewriteRule ^(move-and-watch)?$ index.php?action=home [L,QSA]
+#on suit les liens symboliques
+
+Options +FollowSymLinks
+
+#Activation du mode rewrite d'apache
+
+RewriteEngine On
+
+RewriteRule ^home index.php [L,QSA]
+RewriteRule ^home/$ index.php [L,QSA]
+
+RewriteRule ^contact index.php [L,QSA]
+RewriteRule ^contact/$ index.php [L,QSA]
