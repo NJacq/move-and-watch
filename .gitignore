@@ -1,3 +1,4 @@
-./ tournagesdefilmsparis2011.csv
-./test.html
-./app.js
+git tournagesdefilmsparis2011.csv
+test.html
+app.js
+utils/
