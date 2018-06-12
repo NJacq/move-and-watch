@@ -40,7 +40,29 @@ function byRea($rea){
 
 }
 
-//
+//Requête pour afficher par format (télévisuel, cinématog etc...)
+
+function byFormat($format){
+    global $bdd;
+    $response = $bdd->prepare("SELECT * FROM `tournages` WHERE type_de_tournage LIKE \':forma\'");
+    $response->bindParam(":forma", $format, PDO::PARAM_STR);
+    $response->execute();
+
+    $result = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+//Insérer le like de l'utilisateur
+
+function like($getId){
+    global $bdd;
+    $insert = $bdd->prepare("UPDATE tournages SET note = note + 1 WHERE id = :getId");
+    $insert->bindParam(":getId", $getId, PDO::PARAM_INT);
+    $insert->execute();
+}
+
+//Affichage de la meilleure à la moins bonne note
 
 
 
