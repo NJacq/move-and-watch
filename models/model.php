@@ -1,23 +1,7 @@
-
-
-
 <?php
+require_once('../utils/bdd.php');
 
-
-// 
-// $db = new PDO('mysql:host=localhost;dbname=move_watch;charset=utf8','admin','Ma Ch1p3tt3!');
-
-// $sql = $db->prepare('SELECT * FROM tournages');
-// $sql->execute();
-// $response = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-// echo json_encode($response, JSON_UNESCAPED_UNICODE);
-
-
-$db = new PDO('mysql:host=localhost;dbname=move_watch;charset=utf8','admin','Ma Ch1p3tt3!');
-
-	
-	$req = $db->prepare("SELECT * FROM `tournages` WHERE ardt = '16ème'"); /*requète vers la table*/
+	$req = $bdd->prepare("SELECT * FROM `tournages` WHERE ardt = '16ème'"); /*requète vers la table*/
 	
 $req->execute();
 	while($geo = $req->fetch())   /*génération du tableau */
