@@ -17,7 +17,7 @@
 $db = new PDO('mysql:host=localhost;dbname=move_watch;charset=utf8','admin','Ma Ch1p3tt3!');
 
 	
-	$req = $db->prepare("SELECT * FROM `tournages` WHERE ardt = '2ème'"); /*requète vers la table*/
+	$req = $db->prepare("SELECT * FROM `tournages` WHERE ardt = '16ème'"); /*requète vers la table*/
 	
 $req->execute();
 	while($geo = $req->fetch())   /*génération du tableau */
