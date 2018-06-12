@@ -1,14 +1,12 @@
-<?php 
-$url = $_SERVER['REQUEST_URI'];
-var_dump($url);
-if (isset($url)){
+<?php
 
-    switch ($url) { 
-        case "/move-and-watch/home":
-            require('view/index.html');
+if (isset($_GET['action'])){
+    switch ($_GET['action']) { 
+        case "home":
+            require_once 'view/index.html';
         break;
 
-        case "/move-and-watch/contact":
+        case "contact":
             require_once 'view/contact.html';
         break;
 
@@ -16,4 +14,5 @@ if (isset($url)){
             require_once 'view/error.html';
         break;
     }
-} 
+}
+

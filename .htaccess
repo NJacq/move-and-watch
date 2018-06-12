@@ -1,13 +1,7 @@
 #on suit les liens symboliques
-
 Options +FollowSymLinks
-
 #Activation du mode rewrite d'apache
 
 RewriteEngine On
-
-RewriteRule ^home index.php [L,QSA]
-RewriteRule ^home/$ index.php [L,QSA]
-
-RewriteRule ^contact index.php [L,QSA]
-RewriteRule ^contact/$ index.php [L,QSA]
+RewriteRule ^(home)$ index.php?action=$1 [L,QSA]
+RewriteRule ^(contact)$ index.php?action=$1 [L,QSA]

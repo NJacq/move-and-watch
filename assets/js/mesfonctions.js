@@ -66,9 +66,9 @@ $('#data').on('click', '#recenter',function(){
 });
 
 
-var tournages = $.getJSON("../models/model.php",function(dataTournages)
+var tournages = $.getJSON("models/model.php",function(dataTournages)
 {var iconeTournage=L.icon({
-    iconUrl:"../assets/media/clap.png",
+    iconUrl:"assets/media/clap.png",
     iconSize:[19,21]
 });
 L.geoJSON(dataTournages,{
