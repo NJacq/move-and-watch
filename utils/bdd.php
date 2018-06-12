@@ -2,7 +2,7 @@
 
 try{
   
-    $bdd = new PDO('mysql:host=localhost;dbname=move_watch;charset=utf8','admin','Ma Ch1p3tt3!');
+    $bdd = new PDO('mysql:host=localhost;dbname=move_watch;charset=utf8','admin','online2017');
 
 }
 catch(Exeption $e)
