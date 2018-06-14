@@ -18,3 +18,5 @@ function byFormat($format){
 }
 
 $byFormat = byFormat();
+
+echo json_encode($byFormat,  JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
