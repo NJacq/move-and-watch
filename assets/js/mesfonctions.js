@@ -71,22 +71,51 @@ var tournages = $.getJSON("models/model.php",function(dataTournages)
     iconUrl:"assets/media/clap.png",
     iconSize:[19,21]
 });
-L.geoJSON(dataTournages,{
-    pointToLayer:function(feature,latlng){
-        var marker=L.marker(latlng,{icon:iconeTournage});
-        marker.bindPopup('<b><u>Description du tournage</u></b><br>'
-        +'<b>Nom du film : </b>' +feature.properties.titre+'</br>'
-        +'<b>Réalisateur : </b>' +feature.properties.realisateur+'</br>'
-        +'<b>Format : </b>' +feature.properties.type_de_tournage+'</br>'
-        +'<b>Organisme demandeur : </b>' +feature.properties.organisme_demandeur+'</br>'
-        +'<b>Adresse : </b>' +feature.properties.adresse+'</br>'
-        +'<b>Arrondissement : </b>' +feature.properties.ardt+'</br>'
-    );
-        return marker;
-    }
+// L.geoJSON(dataTournages,{
+//     pointToLayer:function(feature,latlng){
+//         var marker=L.marker(latlng,{icon:iconeTournage});
+//         marker.bindPopup('<b><u>Description du tournage</u></b><br>'
+//         +'<b>Nom du film : </b>' +feature.properties.titre+'</br>'
+//         +'<b>Réalisateur : </b>' +feature.properties.realisateur+'</br>'
+//         +'<b>Format : </b>' +feature.properties.type_de_tournage+'</br>'
+//         +'<b>Organisme demandeur : </b>' +feature.properties.organisme_demandeur+'</br>'
+//         +'<b>Adresse : </b>' +feature.properties.adresse+'</br>'
+//         +'<b>Arrondissement : </b>' +feature.properties.ardt+'</br>'
+//     );
+//         return marker;
+//     }
+// }).addTo(mymap);
+
+L.geoJson(dataTournages, {
+    onEachFeature: function (feature, layer){
+      layer.on({
+           click: function showResultsInDiv() {
+               var d = document.getElementById('click-tournage');
+               d.innerHTML = "";
+                
+                      
+                   d.innerHTML += 
+                   '<b>Titre : </b>' +feature.properties.titre+'</br>'
+                            +'<b>Réalisateur : </b>' +feature.properties.realisateur+'</br>'
+                           +'<b>Format : </b>' +feature.properties.type_de_tournage+'</br>'
+                           +'<b>Organisme demandeur : </b>' +feature.properties.organisme_demandeur+'</br>'
+                            +'<b>Adresse : </b>' +feature.properties.adresse+'</br>'
+                            +'<b>Arrondissement : </b>' +feature.properties.ardt+'</br>'
+                   }
+                
+           
+       }); }
 }).addTo(mymap);
+
+
+
+
 }
 );
+
+
+
+
 
 L.DomEvent.on(startBtn, 'click', function() {
     control.spliceWaypoints(0, 1, e.latlng);
