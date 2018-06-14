@@ -1,7 +1,7 @@
 
 <?php
 
-require_once('utils/bdd.php');
+require_once('../utils/bdd.php');
 
 // global $bdd;
 
@@ -63,6 +63,16 @@ function like($getId){
 }
 
 //Affichage de la meilleure à la moins bonne note
+
+function getBest(){
+    global $bdd;
+    $response = $bdd->prepare("SELECT * FROM `tournages` ORDER BY note DESC LIMIT 10");
+    $response->execute();
+
+    $result = $response->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
 
 
 
