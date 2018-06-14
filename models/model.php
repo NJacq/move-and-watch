@@ -4,6 +4,10 @@ require_once'../utils/param.php';
 
 $req = $bdd->prepare("SELECT * FROM `tournages` WHERE ardt = '20ème'"); /*requète vers la table*/
 	
+
+
+// function afficher_lieux(){	
+
 $req->execute();
 
 $tournage = generator_tab($req);
