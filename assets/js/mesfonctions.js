@@ -88,6 +88,28 @@ L.geoJSON(dataTournages,{
 }
 );
 
+
+
+window["mapDataLayer"] = L.geoJson(geojson, {
+    onEachFeature: function (feature, layer){
+      layer.on({
+           click: function showResultsInDiv() {
+               var d = document.getElementById('tab4');
+               d.innerHTML = "";
+                   for (prop in feature.properties){
+                   d.innerHTML += prop+": "+feature.properties[prop]+"<br>";
+                   }
+               console.log(d.innerHTML);
+           }
+       }); }
+}).addTo(map);
+
+
+
+
+
+
+
 L.DomEvent.on(startBtn, 'click', function() {
     control.spliceWaypoints(0, 1, e.latlng);
     map1.closePopup();
