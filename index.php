@@ -6,7 +6,7 @@ if (isset($_GET['action'])){
             require_once 'view/index.html';
         break;
 
-        case "contact":
+        case "us/":
             require_once 'view/contact.html';
         break;
 

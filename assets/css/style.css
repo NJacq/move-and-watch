@@ -81,7 +81,7 @@ nav a{
 
 
 
-@media screen and (min-width: 428px) and (max-width: 877px) {
+/* @media screen and (min-width: 428px) and (max-width: 877px) { */
   h2{
     text-align: left;
     font-size: 18px;
@@ -125,5 +125,5 @@ nav a{
     text-transform: uppercase;
   }
  
-}
-  
+/* }
+   */

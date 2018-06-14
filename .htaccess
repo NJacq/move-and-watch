@@ -3,7 +3,7 @@ Options +FollowSymLinks
 #Activation du mode rewrite d'apache
 
 RewriteEngine On
-RewriteRule ^()$ index.php?action=home [L,QSA]
+RewriteRule ^()?$ index.php?action=home [L,QSA]
 RewriteRule ^(home)$ index.php?action=$1 [L,QSA]
-RewriteRule ^(contact)$ index.php?action=$1 [L,QSA]
+RewriteRule ^(us/)$ index.php?action=$1 [L,QSA]
 # faire htaccess erreur avec pregmatch
