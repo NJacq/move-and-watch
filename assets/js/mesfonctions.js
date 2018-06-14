@@ -40,15 +40,15 @@ mymap.locate({
 
 function onLocationFound(e) {
     var radius = e.accuracy / 2;
-    var iconeTournage = L.icon({
-        iconUrl: "assets/media/clap.png",
-        iconSize: [19, 21]
+    var iconeLoc = L.icon({
+        iconUrl: "assets/media/point_loc.png",
+        iconSize: [8, 8]
     });
 
 
         
-        L.marker(e.latlng,{icon:iconeTournage}).addTo(mymap)
-        .bindPopup("Vous êtes ici").openPopup();
+        L.marker(e.latlng,{icon:iconeLoc}).addTo(mymap)
+        // .bindPopup("Vous êtes ici").openPopup();
 
         L.circle(e.latlng, radius).addTo(mymap);
     mymap.initlat = e.latlng.lat;
