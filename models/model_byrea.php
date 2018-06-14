@@ -16,6 +16,6 @@ function byRea($rea){
     return $result;
 }
 
-$tournage = byRea();
+$byRea = byRea();
 
-echo json_encode($tournage,  JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
+echo json_encode($byRea,  JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
