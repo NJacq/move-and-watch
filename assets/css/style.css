@@ -1,32 +1,104 @@
+
+/*fonts*/
+@font-face{
+  font-family: "RobotoBlack";
+  src: url("../fonts/Roboto-Black.ttf") format("opentype")
+}
+
+@font-face{
+  font-family: "RobotoBlackItalic";
+  src: url("../fonts/Roboto-BlackItalic.ttf") format("opentype")
+}
+
+@font-face{
+  font-family: "RobotoBold";
+  src: url("../fonts/Roboto-Bold.ttf") format("opentype")
+}
+
+@font-face{
+  font-family: "RobotoBoldIt";
+  src: url("../fonts/Roboto-BoldItalic.ttf") format("opentype")
+}
+
+@font-face{
+  font-family: "RobotoReg";
+  src: url("../fonts/Roboto-Regular.ttf") format("opentype")
+}
+
+@font-face{
+  font-family: "RobotoItalic";
+  src: url("../fonts/Roboto-Italic.ttf") format("opentype")
+}
+@font-face{
+  font-family: "RobotoLight";
+  src: url("../fonts/Roboto-Light.ttf") format("opentype")
+}
+@font-face{
+  font-family: "RobotoLightIt";
+  src: url("../fonts/Roboto-LightItalic.ttf") format("opentype")
+}
+@font-face{
+  font-family: "RobotoMedium";
+  src: url("../fonts/Roboto-Medium.ttf") format("opentype")
+}
+@font-face{
+  font-family: "RobotoMediumItalic";
+  src: url("../fonts/Roboto-MediumItalic.ttf") format("opentype")
+}
+@font-face{
+  font-family: "RobotoThin";
+  src: url("../fonts/Roboto-Thin.ttf") format("opentype")
+}
+
+@font-face{
+  font-family: "RobotoThinIt";
+  src: url("../fonts/Roboto-ThinItalic.ttf") format("opentype")
+}
+
 /* general rules*/
 html{
   height: 100vw;
 }
 body{
   margin: 0;
+  font-family: "RobotoReg"
 }
 
 /* header */
 
 header{
-  width: 80%;
-  height:10vh;
+  width: 100%;
+  height:7vh;
   display: flex;
-  justify-content: space-between;
-  margin: auto;
-  align-items: center;
+  
+  z-index: 400000000;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 15px rgba(0,0,0,0.19);
 }
 
+.marginHeader{
+  width:80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  
+}
 .slogan{
   color: orange;
   font-size: 12px;
   margin: 0;
+  font-family: "RobotoItalic"
 }
 /* map display */
-
-#map { 
-  height: 80vh;
+.heightMain{
+  height:86vh;
   width: 100vw;
+}
+#map { 
+  height: 86vh;
+  width: 100vw;
+  position: relative;
 }
 
 #data{
@@ -65,20 +137,57 @@ header{
 /* Navbar */
 
 nav{
-  width: 80%;
-  height: 10vh;
+  width: 100%;
+  height: 7vh;
   margin: auto;
+ 
+  position:fixed;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 20px rgba(0,0,0,0.19);
+}
+.linkNav{
+  width : 80%;
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: auto;
   align-items: center;
 }
+.searchNav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
 
+.usNav{
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.navLink{
+  font-size: 12px;
+  margin: 6px;
+  display: block;
+}
 nav a{
   text-decoration: none;
   font-size: 12px;
   color: black;
 }
+/* clicked lieu */
 
+#click-tournage{
+  height: auto;
+  width: 100vw;
+  position: absolute;
+  bottom:0;
+  z-index: 40000000;
+  background-color: white;
+  padding : 3px;
+  font-size: 10px;
+  /* text-transform: lowercase; */
+}
 
 
 /* @media screen and (min-width: 428px) and (max-width: 877px) { */
