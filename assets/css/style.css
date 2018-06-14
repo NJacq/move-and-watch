@@ -1,22 +1,80 @@
-#map { 
-    height: 580px;
-width: 1000px;
- }
+/* general rules*/
+html{
+  height: 100vw;
+}
+body{
+  margin: 0;
+}
 
- #data{
-    background: rgba(255,255,255, 0.8);
-    position: absolute;
-    top: 7px;
-    right: 7px;
-    z-index: 10000000000;
-    padding: 3px 5px;
-    border: 1px solid rgba(0,0,0, .3);
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0, .3);
-    font-size: .9em;
-  }
-  #recenter{
-    text-decoration: underline;
-    color: #006;
-    cursor: pointer;
-  }
+/* header */
+
+header{
+  width: 80%;
+  height:10vh;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+}
+
+.slogan{
+  color: orange;
+  font-size: 12px;
+  margin: 0;
+}
+/* map display */
+
+#map { 
+  height: 80vh;
+  width: 100vw;
+}
+
+#data{
+  background: rgba(255,255,255, 0.8);
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 10000000000;
+  padding: 3px 5px;
+  border: 1px solid rgba(0,0,0, .3);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0, .3);
+  font-size: .9em;
+}
+
+#recenter{
+  text-decoration: underline;
+  color: #006;
+  cursor: pointer;
+}
+
+.leaflet-control-zoom-out, .leaflet-control-zoom-in{
+  background: black;
+  border:none;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+    border: none;
+    background-clip: padding-box;
+    background-color: black;
+    opacity: 0.7;
+}
+.leaflet-control-attribution {
+  display: none;
+}
+/* Navbar */
+
+nav{
+  width: 80%;
+  height: 10vh;
+  margin: auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a{
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+}
