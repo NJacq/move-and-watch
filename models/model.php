@@ -12,7 +12,7 @@ $req->execute();
 						 'geometry'	=> array(
                                                  'type' => 'Point', 					 /*type de l'objet*/
                                                  'coordinates'=>array(floatval($geo['y']),floatval($geo['x']))),
-												// 'coordinates' => "[".$geo['y'].",".$geo['x']."]"),
+											
 						 'properties' => array(
 												'titre' => $geo['titre'], /* concaténation des variables dates et nom pour l'affichage du titre*/
                                                 'adresse' => $geo['adresse'],/* concaténation des variables  pour l'affichage des details*/ 
