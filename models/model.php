@@ -3,6 +3,10 @@ require_once('../utils/bdd.php');
 
 	$req = $bdd->prepare("SELECT * FROM `tournages` WHERE ardt = '16ème'"); /*requète vers la table*/
 	
+
+
+// function afficher_lieux(){	
+
 $req->execute();
 	while($geo = $req->fetch())   /*génération du tableau */
     {
@@ -25,6 +29,8 @@ $req->execute();
 	
 	}
 echo json_encode($tournage,  JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
+
+
 
 // print_r($geo);
 
