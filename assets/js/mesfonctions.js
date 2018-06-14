@@ -40,12 +40,17 @@ mymap.locate({
 
 function onLocationFound(e) {
     var radius = e.accuracy / 2;
+    var iconeTournage = L.icon({
+        iconUrl: "assets/media/clap.png",
+        iconSize: [19, 21]
+    });
 
 
-    L.marker(e.latlng).addTo(mymap)
+        
+        L.marker(e.latlng,{icon:iconeTournage}).addTo(mymap)
         .bindPopup("Vous êtes ici").openPopup();
 
-    //     L.circle(e.latlng, radius).addTo(mymap);
+        L.circle(e.latlng, radius).addTo(mymap);
     mymap.initlat = e.latlng.lat;
     mymap.initlng = e.latlng.lng;
 }
@@ -73,7 +78,6 @@ $('#data').on('click', '#recenter', function () {
     });
 });
 
-function afficher_lieux(){
 var tournages = $.getJSON("models/model.php", function (dataTournages) {
     var iconeTournage = L.icon({
         iconUrl: "assets/media/clap.png",
@@ -123,7 +127,7 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
 
 
 
-})};
+});
 
 
 
