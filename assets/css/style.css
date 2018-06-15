@@ -187,6 +187,7 @@ nav a{
   background-color: white;
   padding : 3px;
   font-size: 10px;
+  color: rgb(105, 101, 101);
   /* text-transform: lowercase; */
 }
 
@@ -318,9 +319,9 @@ input[type="checkbox"] {
   background:white;
   border-radius:10px;
   color:black;
-  font-size: 20px;
+  font-size: 30px;
   margin-left: 10px;
-  border-color: black;
+  border:none;
 }
 #mail{
   margin-top: 5px;
