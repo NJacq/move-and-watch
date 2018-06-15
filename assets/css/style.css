@@ -223,12 +223,15 @@ nav a{
   }
   textarea{
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
     margin-top: 5px;
     margin-left: 10px;
     color: rgb(201, 28, 94);
     padding-top: 3px;
     width: 300px;
+    border: none;
+    border-bottom: 1px solid rgb(116, 110, 110);
    
   }
   #cestparti{ /* bouton c'est parti */
@@ -327,6 +330,8 @@ input[type="checkbox"] {
   padding-bottom: 6px;
   color: rgb(201, 28, 94);
   width: 300px;
+  border: none;
+  border-bottom: 1px solid rgb(116, 110, 110);
 }
 ::placeholder {
   color: #32BDC7;
