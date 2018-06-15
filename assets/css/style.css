@@ -72,7 +72,7 @@ header{
   display: flex;
   
   z-index: 400000000;
-  box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 15px rgba(0,0,0,0.19);
+  /*box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 15px rgba(0,0,0,0.19);*/
 }
 
 .marginHeader{
@@ -94,6 +94,7 @@ header{
 .heightMain{
   height:86vh;
   width: 100vw;
+  
 }
 #map { 
   height: 86vh;
@@ -200,7 +201,7 @@ nav a{
   }
   #kisomnou{
     width: 350px;
-    margin-left: 30px;
+    margin-left: 15px;
   }
   #bonjour{
     width: 350px;
@@ -223,6 +224,11 @@ nav a{
   textarea{
     margin-bottom: 20px;
     padding-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: rgb(201, 28, 94);
+    padding-top: 3px;
+    width: 300px;
    
   }
   #cestparti{ /* bouton c'est parti */
@@ -231,6 +237,8 @@ nav a{
     color: #ffffff;
     border: none;
     text-transform: uppercase;
+    width : 200px;
+    margin-left: 60px;
   }
   #recherche{/* bouton recherche */
     padding: 5px 8px;
@@ -311,8 +319,27 @@ input[type="checkbox"] {
   margin-left: 10px;
   border-color: black;
 }
-
-  
+#mail{
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: rgb(201, 28, 94);
+  width: 300px;
+}
+::placeholder {
+  color: #32BDC7;
+  font-size: 10px;
+}
+p{
+  display: flex;
+  flex-direction: column;
+   
+}
+#bonjour{
+  margin-left: 10px;
+}
   
 
     
