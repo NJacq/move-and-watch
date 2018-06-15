@@ -106,6 +106,7 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
             layer.on({
                 click: function showResultsInDiv() {
                     var d = document.getElementById('click-tournage');
+                    
                     d.innerHTML = "";
 
 
