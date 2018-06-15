@@ -23,33 +23,42 @@
 
 <body>
     <header>
-        <div class="logo">
-            <p>logo</p>
-        </div>
-        <div class="slogan">
+        <div class="marginHeader">
+            <div class="logo">
+            <a href="home"><p>logo</p></a>
+            </div>
+            <div class="slogan">
             <p class="slogan">Faites un tour dans le décor</p>
+            </div>
         </div>
     </header>
-    <hr>
-    <div id="kisomnou">
-        <h2>Qui sommes nous?</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium labore iste doloremque 
-            explicabo consequatur cupiditate dolorem est ad maxime harum qui provident, 
-            nesciunt ratione quam placeat omnis? Magnam, nostrum cum.</p>
-    </div>
-    <div id="bonjour">
-        <h2>Dites nous bonjour!</h2>
-        <p>
-            <input type="email" id="mail" name="user_mail" placeholder="Votre adresse email"/><br>
-            <textarea id="message" name="texte" placeholder="Votre petit mot"></textarea>
-            <button type="submit">C'est parti</button>
-        </p>
-    </div>
-    <hr>
+    <main class="heightMain">
+        <div id="kisomnou">
+            <h2>Qui sommes nous?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium labore iste doloremque 
+                explicabo consequatur cupiditate dolorem est ad maxime harum qui provident, 
+                nesciunt ratione quam placeat omnis? Magnam, nostrum cum.</p>
+        </div>
+        <div id="bonjour">
+            <h2>Dites nous bonjour!</h2>
+            <p>
+                <input type="email" id="mail" name="user_mail" placeholder="Votre adresse email"/><br>
+                <textarea id="message" name="texte" placeholder="Votre petit mot"></textarea>
+                <button type="submit">C'est parti</button>
+            </p>
+        </div>
+    </main>
     <nav>
-        <a href="search/"><img src="assets/media/magnifying-glass.png"/>Recherche</a> |
-        <a href="us/">Move & Watch</a> 
-        
+        <div class="linkNav">
+            <a href="#" class="searchNav">
+                <img src="assets/media/magnifying-glass.png " alt="loupe" width="15" height="15"/>
+                <p class="navLink" href="#">Recherche</p> 
+            </a>  
+            <a href="us/" class="usNav">
+                <img src="assets/media/magnifying-glass.png " alt="loupe" width="15" height="15"/>
+                <p class="navLink" href="us/">Move & Watch</p> 
+            </a>
+        </div>    
     </nav>
         
  <script src="assets/js/mesfonctions.js"></script>
