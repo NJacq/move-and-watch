@@ -43,61 +43,47 @@
       </div>
   </div>
  
-  <!-- <div id="filtres">
-    <button>X</button>
+  <div id="filtres">
+    <button id="exit">X</button>
     <h2>Filtres</h2>
-    <div id="checkbox">
+    
         <h3>Je veux découvrir des lieux de tournage dans le: </h3>
-
-        <input type="checkbox" id="premier" name="arrondissement" value="1">
-        <label for="subscribeNews">1er arrondissement</label>
-        <input type="checkbox" id="deuxieme" name="arrondissement" value="2">
-        <label for="subscribeNews">2ème arrondissement</label>
-        <input type="checkbox" id="troisieme" name="arrondissement" value="3">
-        <label for="subscribeNews">3ème arrondissement</label>
-        <input type="checkbox" id="quatrieme" name="arrondissement" value="4">
-        <label for="subscribeNews">4ème arrondissement</label>
-        <input type="checkbox" id="cinquieme" name="arrondissement" value="5">
-        <label for="subscribeNews">5ème arrondissement</label>
-        <input type="checkbox" id="sixieme" name="arrondissement" value="6">
-        <label for="subscribeNews">6ème arrondissement</label>
-        <input type="checkbox" id="septieme" name="arrondissement" value="7">
-        <label for="subscribeNews">7ème arrondissement</label>
-        <input type="checkbox" id="huitieme" name="arrondissement" value="8">
-        <label for="subscribeNews">8ème arrondissement</label>
-        <input type="checkbox" id="neuvieme" name="arrondissement" value="9">
-        <label for="subscribeNews">9ème arrondissement</label>
-        <input type="checkbox" id="dixieme" name="arrondissement" value="10">
-        <label for="subscribeNews">10ème arrondissement</label>
-        <input type="checkbox" id="onzieme" name="arrondissement" value="11">
-        <label for="subscribeNews">11ème arrondissement</label>
-        <input type="checkbox" id="douzieme" name="arrondissement" value="12">
-        <label for="subscribeNews">12ème arrondissement</label>
-        <input type="checkbox" id="treizieme" name="arrondissement" value="13">
-        <label for="subscribeNews">13ème arrondissement</label>
-        <input type="checkbox" id="quatorzieme" name="arrondissement" value="14">
-        <label for="subscribeNews">14ème arrondissement</label>
-        <input type="checkbox" id="quinzieme" name="arrondissement" value="15">
-        <label for="subscribeNews">15ème arrondissement</label>
-        <input type="checkbox" id="seizieme" name="arrondissement" value="16">
-        <label for="subscribeNews">16ème arrondissement</label>
-        <input type="checkbox" id="dixseptieme" name="arrondissement" value="17">
-        <label for="subscribeNews">17ème arrondissement</label>
-        <input type="checkbox" id="dixhuitieme" name="arrondissement" value="18">
-        <label for="subscribeNews">18ème arrondissement</label>
-        <input type="checkbox" id="dixneuvieme" name="arrondissement" value="19">
-        <label for="subscribeNews">19ème arrondissement</label>
-        <input type="checkbox" id="vingtieme" name="arrondissement" value="20">
-        <label for="subscribeNews">20ème arrondissement</label>
+        <div id="checkbox">
+        <div id="checkbox1">
+          <input type="checkbox" id="premier" name="arrondissement" value="1"><label for="premier"><span>1er arrondissement</span></label>
+          <input type="checkbox" id="deuxieme" name="arrondissement" value="2"><label for="deuxieme"><span>2ème arrondissement</span></label>
+          <input type="checkbox" id="troisieme" name="arrondissement" value="3"><label for="troisieme"><span>3ème arrondissement</span></label>
+          <input type="checkbox" id="quatrieme" name="arrondissement" value="4"><label for="quatrieme"><span>4ème arrondissement</span></label>
+          <input type="checkbox" id="cinquieme" name="arrondissement" value="5"><label for="cinquieme"><span>5ème arrondissement</span></label>
+          <input type="checkbox" id="sixieme" name="arrondissement" value="6"><label for="sixieme"><span>6ème arrondissement</span></label>
+          <input type="checkbox" id="septieme" name="arrondissement" value="7"><label for="septieme"><span>7ème arrondissement</span></label>
+          <input type="checkbox" id="huitieme" name="arrondissement" value="8"><label for="huitieme"><span>8ème arrondissement</span></label>
+          <input type="checkbox" id="neuvieme" name="arrondissement" value="9"><label for="neuvieme"><span>9ème arrondissement</span></label>
+          <input type="checkbox" id="dixieme" name="arrondissement" value="10"><label for="dixieme"><span>10ème arrondissement</span></label>
+        </div>
+        <div id="checkbox2">
+          <input type="checkbox" id="onzieme" name="arrondissement" value="11"><label for="onzieme"><span></span>11ème arrondissement</label>
+          <input type="checkbox" id="douzieme" name="arrondissement" value="12"><label for="douzieme"><span>12ème arrondissement</span></label>
+          <input type="checkbox" id="treizieme" name="arrondissement" value="13"><label for="treizieme"><span>13ème arrondissement</span></label>
+          <input type="checkbox" id="quatorzieme" name="arrondissement" value="14"><label for="quatorzieme"><span>14ème arrondissement</span></label>
+          <input type="checkbox" id="quinzieme" name="arrondissement" value="15"><label for="quinzieme"><span>15ème arrondissement</span></label>
+          <input type="checkbox" id="seizieme" name="arrondissement" value="16"><label for="seizieme"><span></span>16ème arrondissement</label>
+          <input type="checkbox" id="dixseptieme" name="arrondissement" value="17"><label for="dixseptieme"><span>17ème arrondissement</span></label>
+          <input type="checkbox" id="dixhuitieme" name="arrondissement" value="18"><label for="dixhuitieme"><span>18ème arrondissement</span></label>
+          <input type="checkbox" id="dixneuvieme" name="arrondissement" value="19"><label for="dixneuvieme"><span>19ème arrondissement</span></label>
+          <input type="checkbox" id="vingtieme" name="arrondissement" value="20"><label for="vingtieme"><span>20ème arrondissement</span></label>
+        </div>
     </div>
 
 
     <div>
-      <h3>Je recherche les films/séries réalisées par :</h3>
+      <h3>Je recherche les films ou séries réalisés par :</h3>
       <select id="realisateurs">
+          <option value="" selected="true" disabled="disabled" label="Choisissez un réalisateur"/>
         <option v-for="item in items" v-bind:value="item.value">
           {{item.realisateur}}
         </option>
+        </optgroup>
     </select>
     </div>
 
@@ -105,15 +91,16 @@
     <div>
       <h3>Plutôt des :</h3>
       <select id="types">
+        <option value="" selected="true" disabled="disabled" label="Choisissez un format"/>
         <option v-for="item in items" v-bind:value="item.value">
           {{item.format}}
         </option>
       </select>
     </div>
-    <div id"notes"></div>
-      <input type="checkbox">Je veux voir les lieux les plus apréciés
-    <button type="submit" id="recherche">Rechercher</button>
-  </div> -->
+    <div id="notes">
+      <input type="checkbox" id="choix"><label for="choix"><span>Je veux voir les lieux les plus appréciés</span></label><br>
+    </div>
+    <button type="submit" id="recherche">Rechercher</button> 
   <nav>
     <div class="linkNav">
       <a href="#" class="searchNav">
@@ -131,6 +118,7 @@
 
   <script src="assets/js/ajax.js"></script>
   <script src="assets/js/mesfonctions.js"></script>
+  <script src="assets/js/filtres.js"></script>
 
 
 </body>
