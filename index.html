@@ -43,7 +43,7 @@
       </div>
   </div>
  
-   <div id="filtres">
+  <div id="filtres">
     <button id="exit">X</button>
     <h2>Filtres</h2>
     
@@ -74,11 +74,10 @@
           <input type="checkbox" id="vingtieme" name="arrondissement" value="20"><label for="vingtieme"><span>20ème arrondissement</span></label>
         </div>
     </div>
-    </div>
 
 
     <div>
-      <h3>Je recherche les films ou séries réalisés par :</h3>
+      <h3>Je recherche les films/séries réalisées par :</h3>
       <select id="realisateurs">
           <option value="" selected="true" disabled="disabled" label="Choisissez un réalisateur"/>
         <option v-for="item in items" v-bind:value="item.value">
@@ -98,12 +97,10 @@
         </option>
       </select>
     </div>
-
     <div id="notes">
-      <input type="checkbox" id="choix"><label for="choix"><span>Je veux voir les lieux les plus appréciés</span></label><br>
+      <input type="checkbox" id="choix"><label for="choix"><span>Je veux voir les lieux les plus apréciés</span></label><br>
     </div>
     <button type="submit" id="recherche">Rechercher</button> 
-
   <nav>
     <div class="linkNav">
       <a href="#" class="searchNav">
