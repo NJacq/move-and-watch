@@ -43,52 +43,53 @@
       </div>
   </div>
  
-  <!-- <div id="filtres">
+   <div id="filtres">
     <button>X</button>
     <h2>Filtres</h2>
     <div id="checkbox">
         <h3>Je veux découvrir des lieux de tournage dans le: </h3>
 
-        <input type="checkbox" id="premier" name="arrondissement" value="1">
+        <input type="checkbox" id="premier" value="1er" v-model="checkedArdt">
         <label for="subscribeNews">1er arrondissement</label>
-        <input type="checkbox" id="deuxieme" name="arrondissement" value="2">
+        <input v-model="checkedArdt" type="checkbox" id="deuxieme" name="arrondissement" value="2ème">
         <label for="subscribeNews">2ème arrondissement</label>
-        <input type="checkbox" id="troisieme" name="arrondissement" value="3">
+        <input v-model="checkedArdt" type="checkbox" id="troisieme" name="arrondissement" value="3ème">
         <label for="subscribeNews">3ème arrondissement</label>
-        <input type="checkbox" id="quatrieme" name="arrondissement" value="4">
+        <input v-model="checkedArdt" type="checkbox" id="quatrieme" name="arrondissement" value="4ème">
         <label for="subscribeNews">4ème arrondissement</label>
-        <input type="checkbox" id="cinquieme" name="arrondissement" value="5">
+        <input v-model="checkedArdt" type="checkbox" id="cinquieme" name="arrondissement" value="5ème">
         <label for="subscribeNews">5ème arrondissement</label>
-        <input type="checkbox" id="sixieme" name="arrondissement" value="6">
+        <input v-model="checkedArdt" type="checkbox" id="sixieme" name="arrondissement" value="6ème">
         <label for="subscribeNews">6ème arrondissement</label>
-        <input type="checkbox" id="septieme" name="arrondissement" value="7">
+        <input v-model="checkedArdt" type="checkbox" id="septieme" name="arrondissement" value="7ème">
         <label for="subscribeNews">7ème arrondissement</label>
-        <input type="checkbox" id="huitieme" name="arrondissement" value="8">
+        <input v-model="checkedArdt" type="checkbox" id="huitieme" name="arrondissement" value="8ème">
         <label for="subscribeNews">8ème arrondissement</label>
-        <input type="checkbox" id="neuvieme" name="arrondissement" value="9">
+        <input v-model="checkedArdt" type="checkbox" id="neuvieme" name="arrondissement" value="9ème">
         <label for="subscribeNews">9ème arrondissement</label>
-        <input type="checkbox" id="dixieme" name="arrondissement" value="10">
+        <input v-model="checkedArdt" type="checkbox" id="dixieme" name="arrondissement" value="10ème">
         <label for="subscribeNews">10ème arrondissement</label>
-        <input type="checkbox" id="onzieme" name="arrondissement" value="11">
+        <input v-model="checkedArdt" type="checkbox" id="onzieme" name="arrondissement" value="11ème">
         <label for="subscribeNews">11ème arrondissement</label>
-        <input type="checkbox" id="douzieme" name="arrondissement" value="12">
+        <input v-model="checkedArdt" type="checkbox" id="douzieme" name="arrondissement" value="12ème">
         <label for="subscribeNews">12ème arrondissement</label>
-        <input type="checkbox" id="treizieme" name="arrondissement" value="13">
+        <input v-model="checkedArdt" type="checkbox" id="treizieme" name="arrondissement" value="13ème">
         <label for="subscribeNews">13ème arrondissement</label>
-        <input type="checkbox" id="quatorzieme" name="arrondissement" value="14">
+        <input v-model="checkedArdt" type="checkbox" id="quatorzieme" name="arrondissement" value="14ème">
         <label for="subscribeNews">14ème arrondissement</label>
-        <input type="checkbox" id="quinzieme" name="arrondissement" value="15">
+        <input v-model="checkedArdt" type="checkbox" id="quinzieme" name="arrondissement" value="15ème">
         <label for="subscribeNews">15ème arrondissement</label>
-        <input type="checkbox" id="seizieme" name="arrondissement" value="16">
+        <input v-model="checkedArdt" type="checkbox" id="seizieme" name="arrondissement" value="16ème">
         <label for="subscribeNews">16ème arrondissement</label>
-        <input type="checkbox" id="dixseptieme" name="arrondissement" value="17">
+        <input v-model="checkedArdt" type="checkbox" id="dixseptieme" name="arrondissement" value="17ème">
         <label for="subscribeNews">17ème arrondissement</label>
-        <input type="checkbox" id="dixhuitieme" name="arrondissement" value="18">
+        <input v-model="checkedArdt" type="checkbox" id="dixhuitieme" name="arrondissement" value="18ème">
         <label for="subscribeNews">18ème arrondissement</label>
-        <input type="checkbox" id="dixneuvieme" name="arrondissement" value="19">
+        <input v-model="checkedArdt" type="checkbox" id="dixneuvieme" name="arrondissement" value="19ème">
         <label for="subscribeNews">19ème arrondissement</label>
-        <input type="checkbox" id="vingtieme" name="arrondissement" value="20">
+        <input v-model="checkedArdt" type="checkbox" id="vingtieme" name="arrondissement" value="20ème">
         <label for="subscribeNews">20ème arrondissement</label>
+        <span>Noms cochés : {{ checkedArdt }}</span>
     </div>
 
 
@@ -113,7 +114,7 @@
     <div id"notes"></div>
       <input type="checkbox">Je veux voir les lieux les plus apréciés
     <button type="submit" id="recherche">Rechercher</button>
-  </div> -->
+  </div>
   <nav>
     <div class="linkNav">
       <a href="#" class="searchNav">

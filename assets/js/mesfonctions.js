@@ -78,6 +78,73 @@ $('#data').on('click', '#recenter', function () {
     });
 });
 
+
+// var url = '/move-and-watch/models/model_ardt.php';
+// var data = {
+//     username: 'example'
+// };
+// fetch(url, {
+//         method: 'POST', // or 'PUT'
+//         body: JSON.stringify(data), // data can be `string` or {object}!
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     }).then(res => res.json())
+//     .catch(error => console.error('Error:', error))
+//     .then(response => console.log('Success:', response));
+
+
+
+// var axios = require('/node_modules/axios');
+// new Vue ({
+//     el: "#premier",
+//     data: {
+//         message: "1er",
+//     },
+//     methods: {
+//         buttonClicked: function () {
+//             axios.post('/move-and-watch/models/model_ardt.php', {
+//                     data: this.data
+//                 })
+//                 .then(function (response) {
+//                     console.log(response);
+//                 })
+//                 .catch(function (error) {
+//                     // Wu oh! Something went wrong
+//                     console.log(error.message);
+//                 });
+//         }
+//     }
+// })
+
+new Vue({
+    el: '#checkbox',
+    data: function(){
+        return {
+            checkedArdt: []
+        }
+    },
+
+    methods: {
+        fetchData: function (){
+            let self = this
+            const myRequest = new Request('/move-and-watch/models/model_ardt.php')
+
+            fetch(myRequest)
+                .then((response) => { return response.json() })
+                .then((data) => {
+                    self.checkedArdt = data
+                }).catch(error => {
+                    console.log(error);
+                });
+        }
+    },
+    mounted() {
+        this.fetchData()
+    }
+})
+
+
 var tournages = $.getJSON("models/model.php", function (dataTournages) {
     var iconeTournage = L.icon({
         iconUrl: "assets/media/clap.png",

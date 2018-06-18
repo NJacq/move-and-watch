@@ -1,6 +1,24 @@
 <?php
 require_once('../utils/bdd.php');
 
+// $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+// if ($contentType === "application/json") {
+//   //Receive the RAW post data.
+//   $content = trim(file_get_contents("php://input"));
+
+//   $decoded = json_decode($content, true);
+
+//   //If json_decode failed, the JSON is invalid.
+//   if(! is_array($decoded)) {
+
+//   } else {
+//     // Send error back to user.
+//   }
+// }
+
+// var_dump($decoded);
+
 //Requête pour affichage par arrondissement
 
 function byArdt($ardt){
@@ -15,4 +33,6 @@ function byArdt($ardt){
     return $result;
 }
 
-$byArdt = byArdt();
+$byArdt = byArdt($_POST['data']);
+
+echo json_encode($byArdt,  JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
