@@ -152,6 +152,9 @@ nav{
   margin: auto;
   align-items: center;
 }
+.hauteur{ /*height du footer de la page contact" */
+  height: 33px;
+}
 .searchNav{
   display: flex;
   flex-direction: column;
@@ -357,7 +360,7 @@ span{
   width: 60px;
   height: 60px;
   padding: 5px 5px;
-  
+  ss="navLink"
 }
     
   
