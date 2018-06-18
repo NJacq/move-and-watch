@@ -237,7 +237,7 @@ nav a{
   }
   #cestparti{ /* bouton c'est parti */
     padding: 5px 8px;
-    background-color: #32BDC7;
+    background-color: #54afdd;
     color: #ffffff;
     border: none;
     text-transform: uppercase;
@@ -246,7 +246,7 @@ nav a{
   }
   #recherche{/* bouton recherche */
     padding: 5px 8px;
-    background-color: #32BDC7;
+    background-color: #54afdd;
     color: #ffffff;
     border: none;
     text-transform: uppercase;
@@ -289,7 +289,7 @@ nav a{
     margin-top: 5px;
     margin-left: 10px;
     margin-bottom: 5px;
-    color: #32BDC7;
+    color: #54afdd;
     background-color: #ffffff;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -299,7 +299,7 @@ nav a{
     display:inline-block;
     width:15px;
     height:15px;
-    background:#32BDC7;
+    background:#54afdd;
     
     
 }
@@ -335,7 +335,7 @@ input[type="checkbox"] {
   border-bottom: 1px solid rgb(116, 110, 110);
 }
 ::placeholder {
-  color: #32BDC7;
+  color: #54afdd;
   font-size: 10px;
 }
 p{
@@ -353,7 +353,12 @@ span{
   display: none;
 }
   
-
+.logo2{
+  width: 60px;
+  height: 60px;
+  padding: 5px 5px;
+  
+}
     
   
   
