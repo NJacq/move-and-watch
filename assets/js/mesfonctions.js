@@ -44,8 +44,15 @@ function onLocationFound(e) {
         iconUrl: "assets/media/point_loc.png",
         iconSize: [8, 8]
     });
-
-
+    
+    $('#data').on('click', '#recenter', function () {
+        mymap.panTo({
+            lon: mymap.initlng,
+            lat: mymap.initlat
+        }, {
+            'animate': true
+        });
+    });
         
         L.marker(e.latlng,{icon:iconeLoc}).addTo(mymap)
         // .bindPopup("Vous êtes ici").openPopup();
@@ -69,14 +76,7 @@ mymap.on('move', function () {
     $('#data').html(ll);
 });
 
-$('#data').on('click', '#recenter', function () {
-    mymap.panTo({
-        lon: mymap.initlng,
-        lat: mymap.initlat
-    }, {
-        'animate': true
-    });
-});
+
 
 var tournages = $.getJSON("models/model.php", function (dataTournages) {
     var iconeTournage = L.icon({
@@ -106,6 +106,7 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
             layer.on({
                 click: function showResultsInDiv() {
                     var d = document.getElementById('click-tournage');
+                    
                     d.innerHTML = "";
 
 
