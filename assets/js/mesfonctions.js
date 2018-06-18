@@ -109,14 +109,16 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
                     
                     d.innerHTML = "";
 
-
+                 
                     d.innerHTML +=
-                        '<b>Titre : </b>' + feature.properties.titre + '</br>' +
+                        '<h4>Tout savoir sur:</h4>'+ 
+                          feature.properties.titre + '</br>' +
                         '<b>Réalisateur : </b>' + feature.properties.realisateur + '</br>' +
                         '<b>Format : </b>' + feature.properties.type_de_tournage + '</br>' +
                         '<b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br>' +
                         '<b>Adresse : </b>' + feature.properties.adresse + '</br>' +
                         '<b>Arrondissement : </b>' + feature.properties.ardt + '</br>'
+                        
                 }
 
 

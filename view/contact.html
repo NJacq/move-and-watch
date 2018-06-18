@@ -41,13 +41,17 @@
         </div>
         <div id="bonjour">
             <h2>Dites nous bonjour!</h2>
-            <p>
-                <input type="email" id="mail" name="user_mail" placeholder="Votre adresse email"/><br>
-                <textarea id="message" name="texte" placeholder="Votre petit mot"></textarea>
-                <button type="submit" id="cestparti">C'est parti</button>
-            </p>
+            <form id="verif" name="verif" method="post" onSubmit="return VerifMail();"></form>
+            
+                <input type="text" id="mail"  name="mail"  placeholder="Votre adresse email"/><br> 
+
+                <textarea id="message" name="texte" value="petit mot" placeholder="Votre petit mot"></textarea>
+                <input type="submit" value="C'est parti" name="submit" id="cestparti"/>
+            
+            </form>
         </div>
     </main>
+    
     <nav>
             <div class="linkNav hauteur">
               <a href="home" class="searchNav">
@@ -60,8 +64,9 @@
               </a>
           </div>    
         </nav>
-        
- <script src="assets/js/mesfonctions.js"></script>
+
+<script src="assets/js/verif_formulaire.js"></script>      
+<script src="assets/js/mesfonctions.js"></script>
         
 </body>
 </html>
