@@ -133,6 +133,8 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
 
 
 
+
+
 // L.DomEvent.on(startBtn, 'click', function () {
 //     control.spliceWaypoints(0, 1, e.latlng);
 //     map1.closePopup();
