@@ -271,8 +271,7 @@ nav a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom:8px;
-
+    
 
   }
   #checkbox2{ /* liste de checkbox de 11 à 20 */
@@ -281,6 +280,7 @@ nav a{
     justify-content: space-between;
 
   }
+
   h3{ /* les h3 */
     font-size: 15px;
     margin-left: 10px;
@@ -352,6 +352,10 @@ p{
 #bonjour{
   margin-left: 10px;
 }
+span{
+  margin-left: 5px;
+}
+  
   
 
     
