@@ -65,7 +65,7 @@ mymap.on('locationerror', onLocationError);
 mymap.on('move', function () {
     var zm = mymap.getZoom();
     var ctr = mymap.getCenter();
-    var ll = 'ZOOM:' + zm + ' | MAPCENTER: Lat: ' + ctr['lat'].toFixed(4) + ' Lng: ' + ctr['lng'].toFixed(4) + ' | <span id="recenter">Re-center</span>';
+    var ll = ' <span id="recenter"><img src=""></span>';
     $('#data').html(ll);
 });
 

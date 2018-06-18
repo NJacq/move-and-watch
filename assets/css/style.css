@@ -135,6 +135,12 @@ header{
 .leaflet-control-attribution {
   display: none;
 }
+
+#recenter{
+  background-image: url('../media/Maps-Center-Direction-icon.png');
+  width: 10px;
+  height: 10px;
+}
 /* Navbar */
 
 nav{

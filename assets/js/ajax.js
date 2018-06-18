@@ -43,21 +43,21 @@ var CheckboxVue = new Vue({
 });
 
 
-var searchFilters = document.getElementById('recherche');
-searchFilters.addEventListener('click',function(e){
-    e.preventDefault();
-    var option = document.getElementById('real').innerText;
-    console.log(option)
+// var searchFilters = document.getElementById('recherche');
+// searchFilters.addEventListener('click',function(e){
+//     e.preventDefault();
+//     var option = document.getElementById('real').innerText;
+//     console.log(option)
     
-})
+// })
 
 
 
 
-var checkbox = document.getElementsByClassName('check');
+// var checkbox = document.getElementsByClassName('check');
 
-for(var i = 0; i<checkbox.length; i++){
-    checkbox[i].addEventListener('click', function(e){
-        console.log(e.target.value)
-    })
-}
+// for(var i = 0; i<checkbox.length; i++){
+//     checkbox[i].addEventListener('click', function(e){
+//         console.log(e.target.value)
+//     })
+// }
