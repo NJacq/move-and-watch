@@ -126,6 +126,15 @@ var vue = new Vue({
     methods:{
         loadlist : function() {
             var formData = new FormData();
+            mymap.remove();
+            mymap = L.map('map').setView([48.8566, 2.3522], 12);
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibmljb2xhc2phYyIsImEiOiJjamk1czB5YXowbjhyM2txb2Y4YXVnbjQxIn0.5PuCZmNu4RWZu1FlU0Kbqg', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'pk.eyJ1Ijoibmljb2xhc2phYyIsImEiOiJjamk1czB5YXowbjhyM2txb2Y4YXVnbjQxIn0.5PuCZmNu4RWZu1FlU0Kbqg'
+            }).addTo(mymap);
+
             formData.append('ardt', vue.checkedArdt);
             axios({
                 method: 'post',
