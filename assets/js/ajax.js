@@ -46,7 +46,7 @@ var CheckboxVue = new Vue({
 var searchFilters = document.getElementById('recherche');
 searchFilters.addEventListener('click',function(e){
     e.preventDefault();
-    var option = document.getElementById('real').innerText;
+    var option = document.getElementById('realisateurs').innerText;
     console.log(option)
     
 })

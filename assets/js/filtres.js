@@ -4,6 +4,11 @@ searchFilters.addEventListener('click',function(e){
     var option = document.getElementById('realisateurs');
     console.log(option.options[option.selectedIndex].innerText);
 
+   
+   
+   
+   
+   
     var format = document.getElementById('types');
     console.log(format.options[format.selectedIndex].innerText);
     
