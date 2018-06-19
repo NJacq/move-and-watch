@@ -68,9 +68,8 @@ body{
 
 header{
   width: 100%;
-  height:7vh;
-  display: flex;
-  
+  height:8vh;
+  display: flex;  
   z-index: 400000000;
   /*box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 15px rgba(0,0,0,0.19);*/
 }
@@ -98,10 +97,9 @@ header{
 }
 #map { 
   height: 86vh;
-  width: 100vw;
   position: relative;
+  width: 100vw;
 }
-
 #data{
   background: rgba(255,255,255, 0.8);
   position: absolute;
@@ -139,10 +137,9 @@ header{
 
 nav{
   width: 100%;
-  height: 7vh;
+  height: vh;
   margin: auto;
- 
-  position:fixed;
+  /* position: absolute; */
   box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 20px rgba(0,0,0,0.19);
 }
 .linkNav{
@@ -151,6 +148,10 @@ nav{
   justify-content: space-between;
   margin: auto;
   align-items: center;
+
+}
+.hauteur{ /*height du footer de la page contact" */
+  height: 33px;
 }
 .searchNav{
   display: flex;
@@ -197,7 +198,7 @@ nav a{
     text-align: left;
     font-size: 18px;
     font-family: verdana, serif;
-    margin-left: 10px;
+    margin-left: auto;
     
   }
   #kisomnou{
@@ -237,7 +238,7 @@ nav a{
   }
   #cestparti{ /* bouton c'est parti */
     padding: 5px 8px;
-    background-color: #32BDC7;
+    background-color: #54afdd;
     color: #ffffff;
     border: none;
     text-transform: uppercase;
@@ -246,7 +247,7 @@ nav a{
   }
   #recherche{/* bouton recherche */
     padding: 5px 8px;
-    background-color: #32BDC7;
+    background-color: #54afdd;
     color: #ffffff;
     border: none;
     text-transform: uppercase;
@@ -289,7 +290,7 @@ nav a{
     margin-top: 5px;
     margin-left: 10px;
     margin-bottom: 5px;
-    color: #32BDC7;
+    color: #54afdd;
     background-color: #ffffff;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -299,9 +300,7 @@ nav a{
     display:inline-block;
     width:15px;
     height:15px;
-    background:#32BDC7;
-    
-    
+    background:#54afdd;
 }
 input[type="checkbox"]:checked + label::before{ /*checkbox checked */
   content:"";
@@ -335,7 +334,7 @@ input[type="checkbox"] {
   border-bottom: 1px solid rgb(116, 110, 110);
 }
 ::placeholder {
-  color: #32BDC7;
+  color: #54afdd;
   font-size: 10px;
 }
 p{
@@ -349,9 +348,15 @@ p{
 span{
   margin-left: 5px;
 }
+.initiallyHiddenBlock{ /* cacher la div filtres au départ */
+  display: none;
+}
   
-  
-
+.logo2{
+  width: 45px;
+  height: 45px;
+  padding: 5px 5px;
+}
     
   
   

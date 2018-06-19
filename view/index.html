@@ -27,7 +27,7 @@
   <header>
     <div class="marginHeader">
       <div class="logo">
-        <p>logo</p>
+       <a href="home"><img src="assets/media/logo2.png" class="logo2" alt="logo"/></a>
       </div>
       <div class="slogan">
         <p class="slogan">Faites un tour dans le décor</p>
@@ -40,12 +40,13 @@
 
       </div>
       <div id="click-tournage">
+      
 
       </div>
   </div>
  
-  <div id="filtres">
-    <button id="exit">X</button>
+  <div id="filtres"  class="initiallyHiddenBlock">
+    <a href="home"><button id="exit">X</button></a>
     <h2>Filtres</h2>
     
         <h3>Je veux découvrir des lieux de tournage dans le: </h3>
@@ -122,10 +123,18 @@
   </nav>
 
 
+ <!-- charger tous les scripts à la fin -->
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- ajax pour hide/show la div filtres-->
 
   <script src="assets/js/ajax.js"></script>
   <script src="assets/js/mesfonctions.js"></script>
   <script src="assets/js/filtres.js"></script>
+  <script src="assets/js/hide-show.js"></script>
+  
 
 
 </body>

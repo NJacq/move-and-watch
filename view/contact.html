@@ -25,7 +25,7 @@
     <header>
         <div class="marginHeader">
             <div class="logo">
-            <a href="home"><p>logo</p></a>
+            <a href="home"><img src="assets/media/logo2.png" class="logo2" alt="logo"/></a>
             </div>
             <div class="slogan">
             <p class="slogan">Faites un tour dans le décor</p>
@@ -41,27 +41,32 @@
         </div>
         <div id="bonjour">
             <h2>Dites nous bonjour!</h2>
-            <p>
-                <input type="email" id="mail" name="user_mail" placeholder="Votre adresse email"/><br>
-                <textarea id="message" name="texte" placeholder="Votre petit mot"></textarea>
-                <button type="submit" id="cestparti">C'est parti</button>
-            </p>
+            <form id="verif" name="verif" method="post" onSubmit="return VerifMail();"></form>
+            
+                <input type="text" id="mail"  name="mail"  placeholder="Votre adresse email"/><br> 
+
+                <textarea id="message" name="texte" value="petit mot" placeholder="Votre petit mot"></textarea>
+                <input type="submit" value="C'est parti" name="submit" id="cestparti"/>
+            
+            </form>
         </div>
     </main>
+    
     <nav>
-        <div class="linkNav">
-            <a href="#" class="searchNav">
-                <img src="assets/media/magnifying-glass.png " alt="loupe" width="15" height="15"/>
-                <p class="navLink" href="#">Recherche</p> 
-            </a>  
-            <a href="us/" class="usNav">
-                <img src="assets/media/magnifying-glass.png " alt="loupe" width="15" height="15"/>
-                <p class="navLink" href="us/">Move & Watch</p> 
-            </a>
-        </div>    
-    </nav>
-        
- <script src="assets/js/mesfonctions.js"></script>
+            <div class="linkNav hauteur">
+              <a href="home" class="searchNav">
+                  <img src="assets/media/magnifying-glass.png " alt="loupe" width="30" height="30"/>
+                  <p class="navLink" href="search/">Recherche</p> 
+              </a>  
+              <a href="us/" class="usNav">
+                  <img src="assets/media/logo1.png" alt="logo" width="35" height="35"/>
+                  <p class="navLink" href="us/">Move & Watch</p> 
+              </a>
+          </div>    
+        </nav>
+
+<script src="assets/js/verif_formulaire.js"></script>      
+<script src="assets/js/mesfonctions.js"></script>
         
 </body>
 </html>

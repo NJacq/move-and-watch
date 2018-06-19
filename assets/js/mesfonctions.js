@@ -22,16 +22,16 @@ function createButton(label, container) {
     return btn;
 }
 
-mymap.on('click', function (e) {
-    var container = L.DomUtil.create('div'),
-        startBtn = createButton('Start from this location', container),
-        destBtn = createButton('Go to this location', container);
+// mymap.on('click', function (e) {
+//     var container = L.DomUtil.create('div'),
+//         startBtn = createButton('Start from this location', container),
+//         destBtn = createButton('Go to this location', container);
 
-    L.popup()
-        .setContent(container)
-        .setLatLng(e.latlng)
-        .openOn(mymap);
-});
+//     L.popup()
+//         .setContent(container)
+//         .setLatLng(e.latlng)
+//         .openOn(mymap);
+// });
 
 mymap.locate({
     setView: true,
@@ -192,14 +192,16 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
                     
                     d.innerHTML = "";
 
-
+                 
                     d.innerHTML +=
-                        '<b>Titre : </b>' + feature.properties.titre + '</br>' +
+                        '<h4>Tout savoir sur:</h4>'+ 
+                          feature.properties.titre + '</br>' +
                         '<b>Réalisateur : </b>' + feature.properties.realisateur + '</br>' +
                         '<b>Format : </b>' + feature.properties.type_de_tournage + '</br>' +
                         '<b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br>' +
                         '<b>Adresse : </b>' + feature.properties.adresse + '</br>' +
                         '<b>Arrondissement : </b>' + feature.properties.ardt + '</br>'
+                        
                 }
 
 
@@ -210,8 +212,38 @@ var tournages = $.getJSON("models/model.php", function (dataTournages) {
 
 
 
-
 });
+
+var routing = new L.Routing({
+    position: 'topright'
+    ,routing: {
+      router: myRouterFunction
+    }
+    ,tooltips: {
+      waypoint: 'Waypoint. Drag to move; Click to remove.',
+      segment: 'Drag to create a new waypoint'
+    }
+    ,styles: {     // see http://leafletjs.com/reference.html#polyline-options
+      trailer: {}  // drawing line
+      ,track: {}   // calculated route result
+      ,nodata: {}  // line when no result (error)
+    }
+    ,snapping: {
+      layers: [mySnappingLayer]
+      ,sensitivity: 15
+      ,vertexonly: false
+    }
+    ,shortcut: {
+      draw: {
+        enable: 68    // 'd'
+        ,disable: 81  // 'q'
+      }
+    }
+  });
+  mymap.addControl(routing);
+
+
+
 
 
 
