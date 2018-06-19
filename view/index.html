@@ -49,8 +49,8 @@
     <a href="home"><button id="exit">X</button></a>
     <h2>Filtres</h2>
     
-        <h3>Je veux découvrir des lieux de tournage dans le: </h3>
-        <div id="checkbox">
+      <h3>Je veux découvrir des lieux de tournage dans le: </h3>
+      <div id="checkbox">
         <div id="checkbox1">
           <input type="checkbox" id="premier" name="arrondissement" v-model="checkedArdt" value="1er" v-on:change="loadlist">
           <label for="premier"><span>1er arrondissement</span></label></input>
@@ -87,7 +87,7 @@
     <select id="realisateurs">
       <option value="" selected="true" disabled="disabled" label="Choisissez un réalisateur"/>
       <option v-for="item in items" v-bind:value="item.value">
-        {{item.realisateur}}
+        {{ item.realisateur }}
       </option>
       </optgroup>
     </select>

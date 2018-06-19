@@ -120,8 +120,8 @@ mymap.on('move', function () {
 var vue = new Vue({
     el: '#checkbox',
     data : {
-            checkedArdt: [],
-            infos: null
+        checkedArdt: [],
+        infosByArdt: null
     },    
     methods:{
         loadlist : function() {
@@ -132,115 +132,62 @@ var vue = new Vue({
                 url: '/move-and-watch/models/model_ardt.php',
                 data : formData
             }).then(function (response) {
-                vue.infos = response;
-                console.log(response.data);
+                vue.infosByArdt = response.data;
+                L.geoJson(vue.infosByArdt, {
+                    onEachFeature: function (feature, layer) {
+                        layer.on({
+                            click: function showResultsInDiv() {
+                                var d = document.getElementById('click-tournage');
+                                d.innerHTML = "";
+                                d.innerHTML +=
+                                    '<h4>Tout savoir sur:</h4>' +
+                                    feature.properties.titre + '</br>' +
+                                    '<b>Réalisateur : </b>' + feature.properties.realisateur + '</br>' +
+                                    '<b>Format : </b>' + feature.properties.type_de_tournage + '</br>' +
+                                    '<b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br>' +
+                                    '<b>Adresse : </b>' + feature.properties.adresse + '</br>' +
+                                    '<b>Arrondissement : </b>' + feature.properties.ardt + '</br>'
+                            }
+                        });
+                    }
+                }).addTo(mymap);
+                // console.log(response.data);
             })
             .catch(function (error) {
                     // console.log(error);
             })
         }
-    }    
-
-    // methods: {
-    //     fetchData: function (){
-    //         let self = this
-    //         const myRequest = new Request('/move-and-watch/models/model_ardt.php')
-
-    //         fetch(myRequest)
-    //             .then((response) => { return response.json() })
-    //             .then((data) => {
-    //                 self.checkedArdt = data
-    //             }).catch(error => {
-    //                 console.log(error);
-    //             });
-    //     }
-    // },
-    // mounted() {
-    //     this.fetchData()
-    // }
+    }
 });
-// console.log(vue.checkedArdt);
+console.log(vue.infosByArdt);
 
-var tournages = $.getJSON("models/model.php", function (dataTournages) {
-    var iconeTournage = L.icon({
-        iconUrl: "assets/media/clap.png",
-        iconSize: [19, 21]
-    });
-    // L.geoJSON(dataTournages,{
-    //     pointToLayer:function(feature,latlng){
-    //         var marker=L.marker(latlng,{icon:iconeTournage});
-    //         marker.bindPopup('<b><u>Description du tournage</u></b><br>'
-    //         +'<b>Nom du film : </b>' +feature.properties.titre+'</br>'
-    //         +'<b>Réalisateur : </b>' +feature.properties.realisateur+'</br>'
-    //         +'<b>Format : </b>' +feature.properties.type_de_tournage+'</br>'
-    //         +'<b>Organisme demandeur : </b>' +feature.properties.organisme_demandeur+'</br>'
-    //         +'<b>Adresse : </b>' +feature.properties.adresse+'</br>'
-    //         +'<b>Arrondissement : </b>' +feature.properties.ardt+'</br>'
-    //     );
-    //         return marker;
-    //     }
-    // }).addTo(mymap);
-
-    L.geoJson(dataTournages, {
-       
-        onEachFeature:function(feature, layer) {
-            
-  
-            layer.on({
-                click: function showResultsInDiv() {
-                    var d = document.getElementById('click-tournage');
-                    
-                    d.innerHTML = "";
-
-                 
-                    d.innerHTML +=
-                        '<h4>Tout savoir sur:</h4>'+ 
-                          feature.properties.titre + '</br>' +
-                        '<b>Réalisateur : </b>' + feature.properties.realisateur + '</br>' +
-                        '<b>Format : </b>' + feature.properties.type_de_tournage + '</br>' +
-                        '<b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br>' +
-                        '<b>Adresse : </b>' + feature.properties.adresse + '</br>' +
-                        '<b>Arrondissement : </b>' + feature.properties.ardt + '</br>'
-                        
-                }
-
-
-            });
-        }
-    }).addTo(mymap);
-    
-
-
-
-});
-
-var routing = new L.Routing({
-    position: 'topright'
-    ,routing: {
-      router: myRouterFunction
-    }
-    ,tooltips: {
-      waypoint: 'Waypoint. Drag to move; Click to remove.',
-      segment: 'Drag to create a new waypoint'
-    }
-    ,styles: {     // see http://leafletjs.com/reference.html#polyline-options
-      trailer: {}  // drawing line
-      ,track: {}   // calculated route result
-      ,nodata: {}  // line when no result (error)
-    }
-    ,snapping: {
-      layers: [mySnappingLayer]
-      ,sensitivity: 15
-      ,vertexonly: false
-    }
-    ,shortcut: {
-      draw: {
-        enable: 68    // 'd'
-        ,disable: 81  // 'q'
-      }
-    }
-  });
-  mymap.addControl(routing);
+// var routing = new L.Routing({
+//     position: 'topright'
+//     ,routing: {
+//       router: myRouterFunction
+//     }
+//     ,tooltips: {
+//       waypoint: 'Waypoint. Drag to move; Click to remove.',
+//       segment: 'Drag to create a new waypoint'
+//     }
+//     ,styles: {     // see http://leafletjs.com/reference.html#polyline-options
+//       trailer: {}  // drawing line
+//       ,track: {}   // calculated route result
+//       ,nodata: {}  // line when no result (error)
+//     }
+//     ,snapping: {
+//       layers: [mySnappingLayer]
+//       ,sensitivity: 15
+//       ,vertexonly: false
+//     }
+//     ,shortcut: {
+//       draw: {
+//         enable: 68    // 'd'
+//         ,disable: 81  // 'q'
+//       }
+//     }
+//   });
+//   mymap.addControl(routing);
 
 
 
