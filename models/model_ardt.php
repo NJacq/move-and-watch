@@ -1,38 +1,28 @@
 <?php
-require_once('../utils/bdd.php');
+require_once'../utils/bdd.php';
+require_once'../utils/param.php';
 
-// $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+// $lol = ['ouf' => $_POST['ardt']];
+// echo json_encode($lol);
 
-// if ($contentType === "application/json") {
-//   //Receive the RAW post data.
-//   $content = trim(file_get_contents("php://input"));
-
-//   $decoded = json_decode($content, true);
-
-//   //If json_decode failed, the JSON is invalid.
-//   if(! is_array($decoded)) {
-
-//   } else {
-//     // Send error back to user.
-//   }
-// }
-
-// var_dump($decoded);
-
+$Ardt = $_POST["ardt"];
 //Requête pour affichage par arrondissement
 
 function byArdt($ardt){
     global $bdd;
 
-    $response = $bdd->prepare("SELECT * FROM `tournages` WHERE ardt LIKE \':ardt%\'");
-    $response->bindParam(":ardt", $ardt, PDO::PARAM_INT);
+    $response = $bdd->prepare("SELECT * FROM tournages WHERE ardt = :ardt");
+    $response->bindParam(":ardt", $ardt, PDO::PARAM_STR);
     $response->execute();
 
-    $result = $response->fetchAll(PDO::FETCH_ASSOC);
+    // $result = $response->fetchAll(PDO::FETCH_ASSOC);
+    $result = generator_tab($response);
 
     return $result;
 }
 
-$byArdt = byArdt($_POST['data']);
+$byArdt = byArdt($Ardt);
+echo json_encode($byArdt);
 
-echo json_encode($byArdt,  JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
+// echo json_encode($byArdt, JSON_UNESCAPED_UNICODE); /*encodage de l'array $formation*/
+// echo json_encode($Ardt, JSON_UNESCAPED_UNICODE);

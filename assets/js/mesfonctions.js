@@ -117,33 +117,49 @@ mymap.on('move', function () {
 //     }
 // })
 
-new Vue({
+var vue = new Vue({
     el: '#checkbox',
-    data: function(){
-        return {
-            checkedArdt: []
+    data : {
+            checkedArdt: [],
+            infos: null
+    },    
+    methods:{
+        loadlist : function() {
+            var formData = new FormData();
+            formData.append('ardt', vue.checkedArdt);
+            axios({
+                method: 'post',
+                url: '/move-and-watch/models/model_ardt.php',
+                data : formData
+            }).then(function (response) {
+                vue.infos = response;
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                    // console.log(error);
+            })
         }
-    },
+    }    
 
-    methods: {
-        fetchData: function (){
-            let self = this
-            const myRequest = new Request('/move-and-watch/models/model_ardt.php')
+    // methods: {
+    //     fetchData: function (){
+    //         let self = this
+    //         const myRequest = new Request('/move-and-watch/models/model_ardt.php')
 
-            fetch(myRequest)
-                .then((response) => { return response.json() })
-                .then((data) => {
-                    self.checkedArdt = data
-                }).catch(error => {
-                    console.log(error);
-                });
-        }
-    },
-    mounted() {
-        this.fetchData()
-    }
-})
-
+    //         fetch(myRequest)
+    //             .then((response) => { return response.json() })
+    //             .then((data) => {
+    //                 self.checkedArdt = data
+    //             }).catch(error => {
+    //                 console.log(error);
+    //             });
+    //     }
+    // },
+    // mounted() {
+    //     this.fetchData()
+    // }
+});
+// console.log(vue.checkedArdt);
 
 var tournages = $.getJSON("models/model.php", function (dataTournages) {
     var iconeTournage = L.icon({
