@@ -301,25 +301,8 @@ nav a{
     padding-top: 3px;
     padding-bottom: 3px;
   }
-  input[type="checkbox"] + label::before{ /* mise en forme de la checkbox */
-    content:"";
-    display:i90%
-    width:15p90%
-    height:1590%
-    backgroun90%
-}
-input[type="c90% checked */
-  content:"";90%
-  display:inline-block;
-  width:15px;
-  height:15px;
-  background:rgb(201, 28, 94);
-
   
-}
-input[type="checkbox"] {
-  visibility: hidden; /*pour cacher la checkbox*/
-}
+
 #exit{ /* la croix de la div Filtres */
   background:white;
   border-radius:10px;
