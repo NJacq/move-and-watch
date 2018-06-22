@@ -113,6 +113,12 @@ header{
   font-size: .9em;
 }
 
+#route-narrative{
+  height: 86vh;
+  position: relative;
+  width: 100vw;
+}
+
 #recenter{
   text-decoration: underline;
   color: #006;
@@ -345,9 +351,9 @@ p{
 #bonjour{
   margin-left: 10px;
 }
-span{
+/* span{
   margin-left: 5px;
-}
+} */
 .initiallyHiddenBlock{ /* cacher la div filtres au départ */
   display: none;
 }
@@ -357,7 +363,44 @@ span{
   height: 45px;
   padding: 5px 5px;
 }
+
+.leaflet-control-mapquest-directions {
+  position: absolute;
+  z-index: 2000;
+  overflow: -moz-scrollbars-vertical;
+  overflow-x: visible;
+  overflow-y: scroll;
+  -moz-box-sizing: content-box;
+  padding: 10px 50px 10px 10px;
+  height: 50%;
+  background-color: hsla(0,0%,55%,.2);
+  -webkit-overflow-scrolling: touch;
+  margin-top: 83%;
+  margin-right:30px; 
+}
+
+.search-ahead-form .form-wrap {
+  position: relative;
+  top: -1px;
+  display: block;
+  overflow: hidden;
+  box-sizing: unset;
+  width: 80%;
+  height: 34px;
+  border: 1px solid #b7b7b7;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.reverse-container {
+    position: relative;
+    top: -67px;
+    right: -82%;
+    display: block;
+    margin-bottom: -32px;
+}
     
-  
-  
+
+
 
