@@ -1,4 +1,3 @@
-
   var malongitude="";
   var malatitude="";
   var map = "";

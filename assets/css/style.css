@@ -303,13 +303,13 @@ nav a{
   }
   input[type="checkbox"] + label::before{ /* mise en forme de la checkbox */
     content:"";
-    display:inline-block;
-    width:15px;
-    height:15px;
-    background:#54afdd;
+    display:i90%
+    width:15p90%
+    height:1590%
+    backgroun90%
 }
-input[type="checkbox"]:checked + label::before{ /*checkbox checked */
-  content:"";
+input[type="c90% checked */
+  content:"";90%
   display:inline-block;
   width:15px;
   height:15px;
