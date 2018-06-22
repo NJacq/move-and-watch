@@ -256,11 +256,9 @@ nav a{
     
   }
   #checkbox{ /* div qui contient checkbox1 et checkbox2 */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-   
-    
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
   }
   #checkbox1{ /* liste checkbox de 1 à a0 */
     display: flex;
@@ -287,13 +285,13 @@ nav a{
     
   }
   select{ /* menu select */
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: #54afdd;
-    background-color: #ffffff;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+    /* margin-bottom: 5px; */
+    /* color: #151617; */
+    /* background-color: #ea2a2a; */
+    /* padding-top: 3px; */
+    /* padding-bottom: 3px; */
   }
   input[type="checkbox"] + label::before{ /* mise en forme de la checkbox */
     content:"";

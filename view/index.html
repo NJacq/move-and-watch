@@ -27,88 +27,65 @@
   <header>
     <div class="marginHeader">
       <div class="logo">
-       <a href="home"><img src="assets/media/logo2.png" class="logo2" alt="logo"/></a>
+        <a href="home">
+          <img src="assets/media/logo2.png" class="logo2" alt="logo" />
+        </a>
       </div>
       <div class="slogan">
         <p class="slogan">Faites un tour dans le décor</p>
       </div>
     </div>
   </header>
+  <div id="map"></div>
 
-  <div id="map">
-      <div id="data">
-
-      </div>
-      <div id="click-tournage">
-      
-
-      </div>
-  </div>
- 
   <div id="filtres"  class="initiallyHiddenBlock">
     <a href="home"><button id="exit">X</button></a>
     <h2>Filtres</h2>
-    
-      <h3>Je veux découvrir des lieux de tournage dans le: </h3>
-      <div id="checkbox">
-        <div id="checkbox1">
-          <input type="radio" id="premier" name="arrondissement" v-model="checkedArdt" value="1er" v-on:change="loadlist">
-          <label for="premier"><span>1er arrondissement</span></label></input>
-          <input type="radio" id="deuxieme" name="arrondissement" v-model="checkedArdt" value="2ème" v-on:change="loadlist"><label for="deuxieme"><span>2ème arrondissement</span></label>
-          <input type="radio" id="troisieme" name="arrondissement" value="3ème" v-model="checkedArdt" v-on:change="loadlist"><label for="troisieme"><span>3ème arrondissement</span></label>
-          <input type="radio" id="quatrieme" name="arrondissement" value="4ème" v-model="checkedArdt" v-on:change="loadlist"><label for="quatrieme"><span>4ème arrondissement</span></label>
-          <input type="radio" id="cinquieme" name="arrondissement" value="5ème" v-model="checkedArdt" v-on:change="loadlist"><label for="cinquieme"><span>5ème arrondissement</span></label>
-          <input type="radio" id="sixieme" name="arrondissement" value="6ème" v-model="checkedArdt" v-on:change="loadlist"><label for="sixieme"><span>6ème arrondissement</span></label>
-          <input type="radio" id="septieme" name="arrondissement" value="7ème" v-model="checkedArdt" v-on:change="loadlist"><label for="septieme"><span>7ème arrondissement</span></label>
-          <input type="radio" id="huitieme" name="arrondissement" value="8ème" v-model="checkedArdt" v-on:change="loadlist"><label for="huitieme"><span>8ème arrondissement</span></label>
-          <input type="radio" id="neuvieme" name="arrondissement" value="9ème" v-model="checkedArdt" v-on:change="loadlist"><label for="neuvieme"><span>9ème arrondissement</span></label>
-          <input type="radio" id="dixieme" name="arrondissement" value="10ème" v-model="checkedArdt" v-on:change="loadlist"><label for="dixieme"><span>10ème arrondissement</span></label>
-        </div>
-        
-        <div id="checkbox2">
-          <input type="radio" id="onzieme" name="arrondissement" value="11ème" v-model="checkedArdt" v-on:change="loadlist"><label for="onzieme"><span>11ème arrondissement<span/></label>
-          <input type="radio" id="douzieme" name="arrondissement" value="12ème" v-model="checkedArdt" v-on:change="loadlist"><label for="douzieme"><span>12ème arrondissement</span></label>
-          <input type="radio" id="treizieme" name="arrondissement" value="13ème" v-model="checkedArdt" v-on:change="loadlist"><label for="treizieme"><span>13ème arrondissement</span></label>
-          <input type="radio" id="quatorzieme" name="arrondissement" value="14ème" v-model="checkedArdt" v-on:change="loadlist"><label for="quatorzieme"><span>14ème arrondissement</span></label>
-          <input type="radio" id="quinzieme" name="arrondissement" value="15ème" v-model="checkedArdt" v-on:change="loadlist"><label for="quinzieme"><span>15ème arrondissement</span></label>
-          <input type="radio" id="seizieme" name="arrondissement" value="16ème" v-model="checkedArdt" v-on:change="loadlist"><label for="seizieme"><span></span>16ème arrondissement</label>
-          <input type="radio" id="dixseptieme" name="arrondissement" value="17ème" v-model="checkedArdt" v-on:change="loadlist"><label for="dixseptieme"><span>17ème arrondissement</span></label>
-          <input type="radio" id="dixhuitieme" name="arrondissement" value="18ème" v-model="checkedArdt" v-on:change="loadlist"><label for="dixhuitieme"><span>18ème arrondissement</span></label>
-          <input type="radio" id="dixneuvieme" name="arrondissement" value="19ème" v-model="checkedArdt" v-on:change="loadlist"><label for="dixneuvieme"><span>19ème arrondissement</span></label>
-          <input type="radio" id="vingtieme" name="arrondissement" value="20ème" v-model="checkedArdt" v-on:change="loadlist"><label for="vingtieme"><span>20ème arrondissement</span></label>
-        </div>
-        <span>Noms cochés : {{ checkedArdt }}</span>
+
+
+
+    <div>
+      <h3>Je recherche les films ou séries réalisés par :</h3>
+      <select id="realisateurs">
+        <option value="" selected="true" disabled="disabled" label="Choisissez un réalisateur" />
+        <option v-for="item in items" v-bind:value="item.value">
+          {{ item.realisateur }}
+        </option>
+        </optgroup>
+      </select>
     </div>
+    
+  <div>
+    <h3>Je veux découvrir des lieux de tournage dans le: </h3>
+    <select id="checkboxArdt" v-model="checkedArdt" @change="loadlist">
+      <option value="">Choisissez un arrondissement</option>
+      <option v-for="item in items">
+        {{ item.ardt }}
+      </option>
+    </select>
+  </div>
+    <div>
+      <h3>Plutôt des :</h3>
+      <select id="types">
+        <option value="" selected="true" disabled="disabled" label="Choisissez un format" />
+        <option v-for="item in items" v-bind:value="item.value">
+          {{item.format}}
+        </option>
+      </select>
+    </div>
+    
+    <div id="notes">
+      <input type="radio" id="choix">
+      <label for="choix">
+        <span>Je veux voir les lieux les plus appréciés</span>
+      </label>
+      <br>
+    </div>
+    <button type="submit" id="recherche">Rechercher</button>
   </div>
   
 
-  <div>
-    <h3>Je recherche les films ou séries réalisés par :</h3>
-    <select id="realisateurs">
-      <option value="" selected="true" disabled="disabled" label="Choisissez un réalisateur"/>
-      <option v-for="item in items" v-bind:value="item.value">
-        {{ item.realisateur }}
-      </option>
-      </optgroup>
-    </select>
-  </div>
-
-
-  <div>
-    <h3>Plutôt des :</h3>
-    <select id="types">
-      <option value="" selected="true" disabled="disabled" label="Choisissez un format"/>
-      <option v-for="item in items" v-bind:value="item.value">
-        {{item.format}}
-      </option>
-    </select>
-  </div>
-
-  <div id="notes">
-    <input type="radio" id="choix"><label for="choix"><span>Je veux voir les lieux les plus appréciés</span></label><br>
-  </div>
-  <button type="submit" id="recherche">Rechercher</button> 
-
+  
   <nav>
     <div class="linkNav">
       <a href="#" class="searchNav">

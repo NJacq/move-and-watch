@@ -12,7 +12,7 @@ var RealVue = new Vue({
             url: 'models/model_rea.php',
             success: function (response) {
                self.items = JSON.parse(response);
-               
+               console.log(self.items);
             },
             error: function (error) {
                 console.log(error);
@@ -32,8 +32,8 @@ var CheckboxVue = new Vue({
         $.ajax({
             url: 'models/model_for.php',
             success: function (response) {
-               self.items = JSON.parse(response);
-            
+                self.items = JSON.parse(response);
+                console.log(self.items);
             },
             error: function (error) {
                 console.log(error);
@@ -52,7 +52,26 @@ searchFilters.addEventListener('click',function(e){
 })
 
 
-
+// var Ardt = new Vue({
+//     el: '#checkboxArdt',
+//     datatype: JSON,
+//     data: {
+//         items: []
+//     },
+//     beforeCreate: function () {
+//         var self = this;
+//         $.ajax({
+//             url: 'models/model_allardt.php',
+//             success: function (response) {
+//                 self.items = JSON.parse(response);
+//                 console.log(self.items);
+//             },
+//             error: function (error) {
+//                 console.log(error);
+//             }
+//         });
+//     }
+// });
 
 var checkbox = document.getElementsByClassName('check');
 
