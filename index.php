@@ -8,11 +8,13 @@ if (isset($_GET['action'])){
 
         case "us/":
             require_once 'view/contact.html';
+            require_once 'models/contact.php';
         break;
-        
+
         default:
             require_once 'view/error.html';
         break;
+        
         
     }
 }
