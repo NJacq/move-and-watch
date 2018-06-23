@@ -56,7 +56,7 @@
     <div id="checkboxArdt">
       <h3>Je veux découvrir des lieux de tournage dans le: </h3>
       <select v-model="checkedArdt" @change="loadlist">
-        <option value="" disabled="disabled">Choisissez un arrondissement</option>
+        <option value="" selected="true" disabled="disabled">Choisissez un arrondissement</option>
         <option v-for="item in items">
           {{ item.ardt }}
         </option>
@@ -100,7 +100,6 @@
 
  <!-- charger tous les scripts à la fin -->
 
- 
 
 
  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.js"></script>

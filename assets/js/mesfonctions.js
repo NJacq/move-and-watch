@@ -6,7 +6,9 @@
         layers: L.mapquest.tileLayer("map"),
         zoom: 12
     });
-
+        map.addLayer(L.mapquest.trafficLayer());
+        map.addLayer(L.mapquest.incidentsLayer());
+        map.addLayer(L.mapquest.marketsLayer());
 
       
   //   function geolocationErrorOccurred(geolocationSupported, popup, latLng) {
@@ -52,27 +54,87 @@ map.addControl(L.mapquest.geocodingControl({
 }));
 
 L.mapquest.directionsControl({
+  className: '',
+  directions: {
+    options: {
+      timeOverage: 25,
+      doReverseGeocode: false,
+    }
+  },
+  directionsLayer: {
+    startMarker: {
+      draggable: true,
+      icon: 'marker-start',
+      iconOptions: {},
+    },
+    endMarker: {
+      draggable: true,
+      icon: 'marker-end',
+      iconOptions: {},
+    },
+    routeRibbon: {
+      showTraffic: true
+    },
+    alternateRouteRibbon: {
+      showTraffic: true
+    },
+    paddingTopLeft: [450, 20],
+    paddingBottomRight: [20, 20],
+  },
+  startInput: {
+    compactResults: true,
+    disabled: false,
+    location: {},
+    placeholderText: 'Starting point or click on the map...',
+    geolocation: {
+      enabled: true
+    }
+  },
+  endInput: {
+    compactResults: true,
+    disabled: false,
+    location: {},
+    placeholderText: 'Destination',
+    geolocation: {
+      enabled: true
+    }
+  },
+  addDestinationButton: {
+    enabled: true,
+    maxLocations: 10,
+  },
+  routeTypeButtons: {
+    enabled: true,
+  },
+  reverseButton: {
+    enabled: true,
+  },
+  optionsButton: {
+    enabled: true,
+  },
   routeSummary: {
-    enabled: true
-    
+    enabled: true,
+    compactResults: false,
   },
   narrativeControl: {
     enabled: true,
     compactResults: false,
-    interactive: true
-
-  }
+    interactive: true,
+  },
 }).addTo(map);
-  }
-L.marker([malatitude,malongitude], {
-  icon: L.mapquest.icons.flag({
-    primaryColor: '#22407F',
-    secondaryColor: '#3B5998',
-    shadow: true,
-    size: 'md',
-    symbol: 'Ici'
-  })
-}).addTo(layerAllMarkers);
+
+
+
+}
+// L.marker([malatitude,malongitude], {
+//   icon: L.mapquest.icons.flag({
+//     primaryColor: '#22407F',
+//     secondaryColor: '#3B5998',
+//     shadow: true,
+//     size: 'md',
+//     symbol: 'Ici'
+//   })
+// }).addTo(layerAllMarkers);
 
 
 
