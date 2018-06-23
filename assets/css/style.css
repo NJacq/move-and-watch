@@ -106,11 +106,12 @@ header{
   top: 7px;
   right: 7px;
   z-index: 10000000000;
-  padding: 3px 5px;
+  /* padding: 3px 5px; */
   border: 1px solid rgba(0,0,0, .3);
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0, .3);
   font-size: .9em;
+  margin-left: 5px;
 }
 
 #route-narrative{
@@ -174,7 +175,7 @@ nav{
   width: 50%;
 }
 .navLink{
-  font-size: 12px;
+  font-size: 15px;
   margin: 6px;
   display: block;
 }
@@ -185,21 +186,19 @@ nav a{
 }
 /* clicked lieu */
 
-#click-tournage{
+#click-tournage {
   height: auto;
   width: 100vw;
-  position: absolute;
-  bottom:0;
+  position: relative;
+  bottom: 0;
   z-index: 40000000;
   background-color: white;
-  padding : 3px;
-  font-size: 10px;
-  color: rgb(105, 101, 101);
-  /* text-transform: lowercase; */
+  /* padding: 3px; */
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  
 }
-
-
-
   h2{
     text-align: left;
     font-size: 18px;
@@ -259,14 +258,13 @@ nav a{
     text-transform: uppercase;
     margin-left: 130px;
     margin-top: 5px;
+    margin-bottom: 10px;
     
   }
   #checkbox{ /* div qui contient checkbox1 et checkbox2 */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-   
-    
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
   }
   #checkbox1{ /* liste checkbox de 1 à a0 */
     display: flex;
@@ -293,13 +291,13 @@ nav a{
     
   }
   select{ /* menu select */
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: #54afdd;
-    background-color: #ffffff;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+    /* margin-bottom: 5px; */
+    /* color: #151617; */
+    /* background-color: #ea2a2a; */
+    /* padding-top: 3px; */
+    /* padding-bottom: 3px; */
   }
   
 
@@ -361,6 +359,11 @@ p{
   margin-top: 83%;
   margin-right:30px; 
 }
+span.envoi{
+  color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('success.png');
+}
 
 .search-ahead-form .form-wrap {
   position: relative;
@@ -382,8 +385,39 @@ p{
     right: -82%;
     display: block;
     margin-bottom: -32px;
+    z-index: 100000;
 }
     
+span.echec{
+  color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('error.png');
+}
 
+h4{
+  color: #54afdd;
+  margin-left: 15px;
+}
 
+b{
+  color: orange;
+}
+p{
+  margin-left: 15px;
+}
 
+span{
+  color: orange;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.choix{
+  color: black;
+  font-size: 15px;
+}
+
+#notes{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

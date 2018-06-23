@@ -1,149 +1,273 @@
-  var malongitude="";
-  var malatitude="";
-  var map = "";
-  setTimeout("setPosition();",900);
-
-function setPosition(){
-  if(navigator.geolocation)
-    navigator.geolocation.getCurrentPosition(position);
-}      
-  
-  
+  window.onload = function() {
+    L.mapquest.key = 'MAxEGKsMuGoi5Y7FMzaxC1RirEkOI5xg';
+    fg = L.featureGroup();
+    map = L.mapquest.map('map', {
+        center: [48.8566,2.3522],
+        layers: L.mapquest.tileLayer("map"),
+        zoom: 12
+    });
 
 
-function showCarte( malatitude, malongitude ){ 
-  L.mapquest.key = 'MAxEGKsMuGoi5Y7FMzaxC1RirEkOI5xg';
-  
-  //console.log( malatitude );
-  var map = L.mapquest.map('map', {     
-    center: [malatitude,malongitude],
-    layers: L.mapquest.tileLayer('map'),
-    zoom: 13
-  });    
-  map.addControl(L.mapquest.control());
-  map.addControl(L.mapquest.geocodingControl({
-    position: 'topleft'
-  }));
-
-  L.mapquest.directionsControl({
-    routeSummary: {
-      enabled: true
       
+  //   function geolocationErrorOccurred(geolocationSupported, popup, latLng) {
+  //     popup.setLatLng(latLng);
+  //     popup.setContent(geolocationSupported ?
+  //             '<b>Error:</b> The Geolocation service failed.' :
+  //             '<b>Error:</b> This browser doesn\'t support geolocation.');
+  //     popup.openOn(geolocationMap);
+  // }
+
+  // if (navigator.geolocation) {
+   
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //         var latLng = {
+  //             lat: position.coords.latitude,
+  //             lng: position.coords.longitude
+  //         };
+
+  //         popup.setLatLng(latLng);
+  //         popup.setContent('This is your current location');
+  //         popup.openOn(geolocationMap);
+
+  //         geolocationMap.setView(latLng);
+  //     }, function() {
+  //         geolocationErrorOccurred(true, popup, geolocationMap.getCenter());
+  //     });
+  // } else {
+  //     //No browser support geolocation service
+  //     geolocationErrorOccurred(false, popup, geolocationMap.getCenter());
+  // }
+  
+
+//console.log( malatitude );
+//   map = L.mapquest.map('map', {     
+//   center: [malatitude,malongitude],
+//   layers: L.mapquest.tileLayer('map'),
+//   zoom: 11
+// });
+layerAllMarkers = L.layerGroup().addTo(map);
+map.addControl(L.mapquest.control());
+map.addControl(L.mapquest.geocodingControl({
+  position: 'topleft'
+}));
+
+L.mapquest.directionsControl({
+  routeSummary: {
+    enabled: true
+    
+  },
+  narrativeControl: {
+    enabled: true,
+    compactResults: false,
+    interactive: true
+
+  }
+}).addTo(map);
+  }
+L.marker([malatitude,malongitude], {
+  icon: L.mapquest.icons.flag({
+    primaryColor: '#22407F',
+    secondaryColor: '#3B5998',
+    shadow: true,
+    size: 'md',
+    symbol: 'Ici'
+  })
+}).addTo(layerAllMarkers);
+
+
+
+function itineraire(){
+
+L.mapquest.directionsControl({
+  routeSummary: {
+    enabled: true
+   
+  },
+  narrativeControl: {
+    enabled: true,
+    compactResults: false,
+    interactive: true
+
+  }
+}).addTo(map);
+
+};
+    
+  
+var Ardt = new Vue({
+el: '#checkboxArdt',
+data: {
+  checkedArdt: [],
+  infosByArdt: null,
+  items: []
+},
+beforeCreate: function () {
+  var self = this;
+  $.ajax({
+    url: 'models/model_allardt.php',
+    success: function (response) {
+      self.items = JSON.parse(response);
     },
-    narrativeControl: {
-      enabled: true,
-      compactResults: false,
-      interactive: true
-
+    error: function (error) {
+      console.log(error);
     }
-  }).addTo(map);
+  });
+},
+methods: {
+  loadlist: function () {
 
-  L.marker([malatitude,malongitude], {
-    icon: L.mapquest.icons.flag({
-      primaryColor: '#22407F',
-      secondaryColor: '#3B5998',
-      shadow: true,
-      size: 'md',
-      symbol: 'Ici'
-    })
-  }).addTo(map);
-
-
-
-    
-  $.getJSON('./models/model.php', function(data) {
-    L.geoJSON(data, {
-      
-      onEachFeature:function(feature, layer) {
-        
-
-        layer.on({
-            click: function showResultsInDiv() {
+    var formData = new FormData();
+    map.removeLayer(layerAllMarkers);
+    layerAllMarkers = L.layerGroup().addTo(map);
+    formData.append('ardt', Ardt.checkedArdt);
+    axios({
+        method: 'post',
+        url: '/move-and-watch/models/model_ardt.php',
+        data: formData
+      }).then(function (response) {
+        Ardt.infosByArdt = response.data;
+        L.geoJson(Ardt.infosByArdt, {
+          onEachFeature: function (feature, layer) {
+            layer.on({
+              click: function showResultsInDiv() {
                 var d = document.getElementById('click-tournage');
-              
                 d.innerHTML = "";
-
-            
                 d.innerHTML +=
-                    '<h4>Tout savoir sur:</h4>'+ 
-                      feature.properties.titre + '</br>' +
-                    '<b>Réalisateur : </b>' + feature.properties.realisateur + '</br>' +
-                    '<b>Format : </b>' + feature.properties.type_de_tournage + '</br>' +
-                    '<b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br>' +
-                    '<b>Adresse : </b>' + feature.properties.adresse + '</br>' +
-                    '<b>Arrondissement : </b>' + feature.properties.ardt + '</br>'
-            }
-          });
-        }
-      }).addTo(map);
-    }); 
-}
-
-    
-         
-function position(pos){    
-      var malatitude= pos.coords.latitude;
-      var malongitude= pos.coords.longitude;
-      showCarte(malatitude, malongitude);
-      
-}
-
-function geo(){
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(position);
+                  '<h4>Tout savoir sur:</h4>' +
+                  '<p><span>'+feature.properties.titre + '</span></br></p>' +
+                 '<p><b>Réalisateur : </b>' + feature.properties.realisateur + '</br></p>' +
+                  '<p><b>Format : </b>' + feature.properties.type_de_tournage + '</br></p>' +
+                  '<p><b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br></p>' +
+                  '<p><b>Adresse : </b>' + feature.properties.adresse + '</br></p>' +
+                  '<p><b>Arrondissement : </b>' + feature.properties.ardt + '</br></p>'
+              }
+            });
+          }
+        }).addTo(layerAllMarkers);
+        // console.log(response.data);
+      })
+      .catch(function (error) {
+        // console.log(error);
+      })
   }
 }
+});
 
-function carte(){
-  
-
-  $.getJSON('./models/model.php', function(data) {
-    L.geoJSON(data, {
-       
-               onEachFeature:function(feature, layer) {
-                  
-        
-                   layer.on({
-                       click: function showResultsInDiv() {
-                           var d = document.getElementById('click-tournage');
-                          
-                           d.innerHTML = "";
-      
-                       
-                           d.innerHTML +=
-                               '<h4>Tout savoir sur:</h4>'+ 
-                                 feature.properties.titre + '</br>' +
-                               '<b>Réalisateur : </b>' + feature.properties.realisateur + '</br>' +
-                               '<b>Format : </b>' + feature.properties.type_de_tournage + '</br>' +
-                               '<b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br>' +
-                               '<b>Adresse : </b>' + feature.properties.adresse + '</br>' +
-                               '<b>Arrondissement : </b>' + feature.properties.ardt + '</br>'
-                       }
-                  });
-               }
-           }).addTo(map);
-  });
-
-  L.mapquest.directionsControl({
-    routeSummary: {
-      enabled: true
-     
+var Realisateurs = new Vue({
+el: '#realisateurs',
+data: {
+  selectedRea: [],
+  infosByRea: null,
+  items: []
+},
+beforeCreate: function () {
+  var self = this;
+  $.ajax({
+    url: 'models/model_rea.php',
+    success: function (response) {
+      self.items = JSON.parse(response);
     },
-    narrativeControl: {
-      enabled: true,
-      compactResults: false,
-      interactive: true
-
+    error: function (error) {
+      console.log(error);
     }
-  }).addTo(map);
+  });
+},
+methods: {
+  loadlist: function () {
+    var formData = new FormData();
+    map.removeLayer(layerAllMarkers);
+    layerAllMarkers = L.layerGroup().addTo(map);
+    formData.append('realisateur', Realisateurs.selectedRea);
+    axios({
+        method: 'post',
+        url: '/move-and-watch/models/model_byrea.php',
+        data: formData
+      }).then(function (response) {
+          Realisateurs.infosByRea = response.data;
+          console.log(response.data);
+          L.geoJson(Realisateurs.infosByRea, {
+            onEachFeature: function (feature, layer) {
+              layer.on({
+                click: function showResultsInDiv() {
+                  var d = document.getElementById('click-tournage');
+                  d.innerHTML = "";
+                  d.innerHTML +=
+                  '<h4>Tout savoir sur:</h4>' +
+                  '<p><span>'+feature.properties.titre + '</span></br></p>' +
+                 '<p><b>Réalisateur : </b>' + feature.properties.realisateur + '</br></p>' +
+                  '<p><b>Format : </b>' + feature.properties.type_de_tournage + '</br></p>' +
+                  '<p><b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br></p>' +
+                  '<p><b>Adresse : </b>' + feature.properties.adresse + '</br></p>' +
+                  '<p><b>Arrondissement : </b>' + feature.properties.ardt + '</br></p>'
+                }
+              });
+            }
+          }).addTo(layerAllMarkers);
+        // console.log(response.data);
+      })
+      .catch(function (error) {
+        // console.log(error);
+      })
+  }
+}
+});
 
 
-
-  document.addEventListener('click', function(event){
-    console.log(event.target);
-    console.log(document.querySelector('.leaflet-popup-content').innerText);
-    })
-  
-};
-      
-    
+var Format = new Vue({
+el: '#format',
+data: {
+  selectedForm: [],
+  infosByForm: null,
+  items: []
+},
+beforeCreate: function () {
+  var self = this;
+  $.ajax({
+    url: 'models/model_for.php',
+    success: function (response) {
+      self.items = JSON.parse(response);
+    },
+    error: function (error) {
+      console.log(error);
+    }
+  });
+},
+methods: {
+  loadlist: function () {
+    var formData = new FormData();
+    map.removeLayer(layerAllMarkers);
+    layerAllMarkers = L.layerGroup().addTo(map);
+    formData.append('format', Format.selectedForm);
+    axios({
+        method: 'post',
+        url: '/move-and-watch/models/model_format.php',
+        data: formData
+      }).then(function (response) {
+        Format.infosByForm = response.data;
+        console.log(response.data);
+        L.geoJson(Format.infosByForm, {
+          onEachFeature: function (feature, layer) {
+            layer.on({
+              click: function showResultsInDiv() {
+                var d = document.getElementById('click-tournage');
+                d.innerHTML = "";
+                d.innerHTML +=
+                '<h4>Tout savoir sur:</h4>' +
+                '<p><span>'+feature.properties.titre + '</span></br></p>' +
+               '<p><b>Réalisateur : </b>' + feature.properties.realisateur + '</br></p>' +
+                '<p><b>Format : </b>' + feature.properties.type_de_tournage + '</br></p>' +
+                '<p><b>Organisme demandeur : </b>' + feature.properties.organisme_demandeur + '</br></p>' +
+                '<p><b>Adresse : </b>' + feature.properties.adresse + '</br></p>' +
+                '<p><b>Arrondissement : </b>' + feature.properties.ardt + '</br></p>'
+              }
+            });
+          }
+        }).addTo(layerAllMarkers);
+        // console.log(response.data);
+      })
+      .catch(function (error) {
+        // console.log(error);
+      })
+  }
+}
+});

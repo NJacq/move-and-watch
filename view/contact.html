@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    
     <header>
         <div class="marginHeader">
             <div class="logo">
@@ -41,15 +42,18 @@
         </div>
         <div id="bonjour">
             <h2>Dites nous bonjour!</h2>
-            <form id="verif" name="verif" method="post" onSubmit="return VerifMail();"></form>
-            
-                <input type="text" id="mail"  name="mail"  placeholder="Votre adresse email"/><br> 
-
-                <textarea id="message" name="texte" value="petit mot" placeholder="Votre petit mot"></textarea>
-                <input type="submit" value="C'est parti" name="submit" id="cestparti"/>
-            
+            <form  name="contact" method="post" action="us/">
+                <p>
+                    <input type="text" id="mail"  name="mail"  placeholder="Votre adresse email"/><br> 
+                    <textarea id="message" name="message" value="petit mot" placeholder="Votre petit mot"></textarea>
+                    <input type="submit" value="C'est parti" name="submit" id="cestparti"/>
+                </p>
+                
             </form>
+           
         </div>
+      
+        
     </main>
     
     <nav>
