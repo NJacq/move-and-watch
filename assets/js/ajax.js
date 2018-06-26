@@ -53,11 +53,3 @@ var CheckboxVue = new Vue({
 
 
 
-
-// var checkbox = document.getElementsByClassName('check');
-
-// for(var i = 0; i<checkbox.length; i++){
-//     checkbox[i].addEventListener('click', function(e){
-//         console.log(e.target.value)
-//     })
-// }
