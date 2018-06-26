@@ -332,17 +332,17 @@ p{
 
 .leaflet-control-mapquest-directions {
   position: absolute;
+  bottom:0;
   z-index: 2000;
   overflow: -moz-scrollbars-vertical;
   overflow-x: visible;
   overflow-y: scroll;
   -moz-box-sizing: content-box;
-  padding: 10px 50px 10px 10px;
-  height: 50%;
+  padding: 5px 0 0 10px;
+  height: 38%;
   background-color: hsla(0,0%,55%,.2);
   -webkit-overflow-scrolling: touch;
-  margin-top: 83%;
-  margin-right:30px; 
+  width: 100vw;
 }
 span.envoi{
   color: #4F8A10;
