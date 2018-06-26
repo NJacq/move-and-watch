@@ -5,13 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <base href="http://localhost/move-and-watch/index.php">
-  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.css"/>
-  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest-maps.css"/>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.css" />
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest-maps.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  
-
-
-
 
   <title>Move & Watch</title>
 </head>
@@ -21,7 +17,7 @@
     <div class="marginHeader">
       <div class="logo">
         <a href="home">
-          <img src="assets/media/logo2.png" class="logo2" alt="logo" />
+          <img src="assets/media/logo2.png" class="logo2" alt="logo move-and-watch" width="40" height="auto"/>
         </a>
       </div>
       <div class="slogan">
@@ -29,30 +25,31 @@
       </div>
     </div>
   </header>
+  <main>
   <div id="map" class="carte">
   </div>
+  <div id="click-tournage" class="infos initiallyHiddenBlock">
+    <a href="home">
+      <button id="exit">X</button>
+    </a>
+  </div>
 
-  <div id="filtres"  class="initiallyHiddenBlock">
-    <a href="home"><button id="exit">X</button></a>
-
-
-    <div id="click-tournage" class="infos">
-    </div>
-
+  <div id="filtres" class="initiallyHiddenBlock">
+    <a href="home">
+      <button id="exit">X</button>
+    </a>
+   
     <h2>Filtres</h2>
-
-
-
     <div id="realisateurs">
       <h3>Je recherche les films ou séries réalisés par :</h3>
-      <select  v-model="selectedRea" v-on:change="loadlist">
+      <select v-model="selectedRea" v-on:change="loadlist">
         <option value="" selected="true" disabled="disabled">Choisissez un réalisateur</option>
         <option v-for="item in items">
           {{ item.realisateur }}
         </option>
       </select>
     </div>
-    
+
     <div id="checkboxArdt">
       <h3>Je veux découvrir des lieux de tournage dans le: </h3>
       <select v-model="checkedArdt" @change="loadlist">
@@ -71,47 +68,48 @@
         </option>
       </select>
     </div>
-    
-    <div id="notes">
+
+    <!-- <div id="notes">
       <input type="radio" id="choix">
       <label for="choix">
         <span class="choix">Je veux voir les lieux les plus appréciés</span>
       </label>
-    </div>
-    <!-- <button type="submit" id="recherche">Rechercher</button> -->
+    </div> -->
+    <button type="submit" id="recherche">Rechercher</button>
   </div>
-  
-      
+</main>
 
-  
+
+
   <nav>
     <div class="linkNav">
       <a href="#" class="searchNav">
-          <img src="assets/media/magnifying-glass.png " alt="loupe" width="15" height="15"/>
-          <p class="navLink" href="search/">Recherche</p> 
-      </a>  
-      <a href="us/" class="usNav">
-          <img src="assets/media/logo1.png" alt="logo" width="15" height="15"/>
-          <p class="navLink" href="us/">Move & Watch</p> 
+        <img src="assets/media/magnifying-glass.png " class="iconeNav" alt="loupe" width="auto" height="17" />
+        <p class="navLink" href="search/">Recherche</p>
       </a>
-    </div>    
+      <a href="us/" class="usNav">
+        <img src="assets/media/logo1.png" class="iconeNav" alt="logo" width="auto" height="17" />
+        <p class="navLink" href="us/">Move & Watch</p>
+      </a>
+    </div>
   </nav>
 
 
- <!-- charger tous les scripts à la fin -->
+  <!-- charger tous les scripts à la fin -->
 
 
 
- <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.js"></script>
- <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   <!-- <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--ajax pour hide/show la div filtres-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--ajax pour hide/show la div filtres-->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
- 
 
-    
+
+
 
 
   <!-- <script src="assets/js/ajax.js"></script> -->

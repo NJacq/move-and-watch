@@ -89,14 +89,17 @@ header{
   margin: 0;
   font-family: "RobotoItalic"
 }
+
+
+
 /* map display */
 .heightMain{
-  height:86vh;
+  height:84vh;
   width: 100vw;
   
 }
 #map { 
-  height: 86vh;
+  height: 84vh;
   position: relative;
   width: 100vw;
 }
@@ -120,39 +123,16 @@ header{
   width: 100vw;
 }
 
-#recenter{
-  text-decoration: underline;
-  color: #006;
-  cursor: pointer;
-}
 
-.leaflet-control-zoom-out, .leaflet-control-zoom-in{
-  background: black;
-  border:none;
-}
 
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
-    border: none;
-    background-clip: padding-box;
-    background-color: black;
-    opacity: 0.7;
-}
-.leaflet-control-attribution {
-  display: none;
-}
 
-#recenter{
-  background-image: url('../media/Maps-Center-Direction-icon.png');
-  width: 10px;
-  height: 10px;
-}
+
 /* Navbar */
 
 nav{
   width: 100%;
-  height: vh;
+  height: 8vh;
   margin: auto;
-  /* position: absolute; */
   box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 20px rgba(0,0,0,0.19);
 }
 .linkNav{
@@ -163,9 +143,10 @@ nav{
   align-items: center;
 
 }
-.hauteur{ /*height du footer de la page contact" */
+/*
+.hauteur{ height du footer de la page contact" 
   height: 33px;
-}
+}*/
 .searchNav{
   display: flex;
   flex-direction: column;
@@ -181,9 +162,12 @@ nav{
   width: 50%;
 }
 .navLink{
-  font-size: 15px;
-  margin: 6px;
+  font-size: 10px;
+  margin: 1px;
   display: block;
+}
+.iconeNav{
+  margin: 5px;
 }
 nav a{
   text-decoration: none;
@@ -345,11 +329,6 @@ p{
   display: none;
 }
   
-.logo2{
-  width: 45px;
-  height: 45px;
-  padding: 5px 5px;
-}
 
 .leaflet-control-mapquest-directions {
   position: absolute;
