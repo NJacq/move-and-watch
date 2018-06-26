@@ -30,19 +30,19 @@
   </div>
   <div id="click-tournage" class="infos initiallyHiddenBlock">
     <a href="home">
-      <button id="exit">X</button>
+      <button id="exit2">X</button>
     </a>
   </div>
 
   <div id="filtres" class="initiallyHiddenBlock">
-    <a href="home">
+    
       <button id="exit">X</button>
-    </a>
+  
    
-    <h2>Filtres</h2>
+    <h2 class="titreFiltres">Je recherche</h2>
     <div id="realisateurs">
-      <h3>Je recherche les films ou séries réalisés par :</h3>
-      <select v-model="selectedRea" v-on:change="loadlist">
+      <p class="titreSelect"> un réalisateur:</p>
+      <select class="selectFiltres" v-model="selectedRea" v-on:change="loadlist">
         <option value="" selected="true" disabled="disabled">Choisissez un réalisateur</option>
         <option v-for="item in items">
           {{ item.realisateur }}
@@ -51,8 +51,8 @@
     </div>
 
     <div id="checkboxArdt">
-      <h3>Je veux découvrir des lieux de tournage dans le: </h3>
-      <select v-model="checkedArdt" @change="loadlist">
+      <p class="titreSelect">un arrondissement : </p>
+      <select class="selectFiltres" v-model="checkedArdt" @change="loadlist">
         <option value="" selected="true" disabled="disabled">Choisissez un arrondissement</option>
         <option v-for="item in items">
           {{ item.ardt }}
@@ -60,13 +60,15 @@
       </select>
     </div>
     <div id="format">
-      <h3>Plutôt des :</h3>
-      <select v-model="selectedForm" @change="loadlist">
+      <p class="titreSelect">plutôt des :</p>
+      <div class="select">
+      <select class="selectFiltres" v-model="selectedForm" @change="loadlist">
         <option value="" selected="true" disabled="disabled" label="Choisissez un format" />
         <option v-for="item in items">
           {{item.format}}
         </option>
       </select>
+      </div>
     </div>
 
     <!-- <div id="notes">
