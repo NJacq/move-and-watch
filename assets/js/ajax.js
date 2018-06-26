@@ -52,4 +52,3 @@ var CheckboxVue = new Vue({
 // })
 
 
-

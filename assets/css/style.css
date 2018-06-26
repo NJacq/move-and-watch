@@ -68,9 +68,8 @@ body{
 
 header{
   width: 100%;
-  height:7vh;
-  display: flex;
-  
+  height:8vh;
+  display: flex;  
   z-index: 400000000;
   /*box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 15px rgba(0,0,0,0.19);*/
 }
@@ -98,21 +97,27 @@ header{
 }
 #map { 
   height: 86vh;
-  width: 100vw;
   position: relative;
+  width: 100vw;
 }
-
 #data{
   background: rgba(255,255,255, 0.8);
   position: absolute;
   top: 7px;
   right: 7px;
   z-index: 10000000000;
-  padding: 3px 5px;
+  /* padding: 3px 5px; */
   border: 1px solid rgba(0,0,0, .3);
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0, .3);
   font-size: .9em;
+  margin-left: 5px;
+}
+
+#route-narrative{
+  height: 86vh;
+  position: relative;
+  width: 100vw;
 }
 
 #recenter{
@@ -145,10 +150,9 @@ header{
 
 nav{
   width: 100%;
-  height: 7vh;
+  height: vh;
   margin: auto;
- 
-  position:fixed;
+  /* position: absolute; */
   box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 20px rgba(0,0,0,0.19);
 }
 .linkNav{
@@ -157,6 +161,10 @@ nav{
   justify-content: space-between;
   margin: auto;
   align-items: center;
+
+}
+.hauteur{ /*height du footer de la page contact" */
+  height: 33px;
 }
 .searchNav{
   display: flex;
@@ -173,7 +181,7 @@ nav{
   width: 50%;
 }
 .navLink{
-  font-size: 12px;
+  font-size: 15px;
   margin: 6px;
   display: block;
 }
@@ -184,26 +192,24 @@ nav a{
 }
 /* clicked lieu */
 
-#click-tournage{
+#click-tournage {
   height: auto;
   width: 100vw;
-  position: absolute;
-  bottom:0;
+  position: relative;
+  bottom: 0;
   z-index: 40000000;
   background-color: white;
-  padding : 3px;
-  font-size: 10px;
-  color: rgb(105, 101, 101);
-  /* text-transform: lowercase; */
+  /* padding: 3px; */
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  
 }
-
-
-
   h2{
     text-align: left;
     font-size: 18px;
     font-family: verdana, serif;
-    margin-left: 10px;
+    margin-left: auto;
     
   }
   #kisomnou{
@@ -243,7 +249,7 @@ nav a{
   }
   #cestparti{ /* bouton c'est parti */
     padding: 5px 8px;
-    background-color: #32BDC7;
+    background-color: #54afdd;
     color: #ffffff;
     border: none;
     text-transform: uppercase;
@@ -252,20 +258,19 @@ nav a{
   }
   #recherche{/* bouton recherche */
     padding: 5px 8px;
-    background-color: #32BDC7;
+    background-color: #54afdd;
     color: #ffffff;
     border: none;
     text-transform: uppercase;
     margin-left: 130px;
     margin-top: 5px;
+    margin-bottom: 10px;
     
   }
   #checkbox{ /* div qui contient checkbox1 et checkbox2 */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-   
-    
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
   }
   #checkbox1{ /* liste checkbox de 1 à a0 */
     display: flex;
@@ -292,35 +297,16 @@ nav a{
     
   }
   select{ /* menu select */
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: #32BDC7;
-    background-color: #ffffff;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+    /* margin-bottom: 5px; */
+    /* color: #151617; */
+    /* background-color: #ea2a2a; */
+    /* padding-top: 3px; */
+    /* padding-bottom: 3px; */
   }
-  input[type="checkbox"] + label::before{ /* mise en forme de la checkbox */
-    content:"";
-    display:inline-block;
-    width:15px;
-    height:15px;
-    background:#32BDC7;
-    
-    
-}
-input[type="checkbox"]:checked + label::before{ /*checkbox checked */
-  content:"";
-  display:inline-block;
-  width:15px;
-  height:15px;
-  background:rgb(201, 28, 94);
-
   
-}
-input[type="checkbox"] {
-  visibility: hidden; /*pour cacher la checkbox*/
-}
+
 #exit{ /* la croix de la div Filtres */
   background:white;
   border-radius:10px;
@@ -341,7 +327,7 @@ input[type="checkbox"] {
   border-bottom: 1px solid rgb(116, 110, 110);
 }
 ::placeholder {
-  color: #32BDC7;
+  color: #54afdd;
   font-size: 10px;
 }
 p{
@@ -352,13 +338,92 @@ p{
 #bonjour{
   margin-left: 10px;
 }
-span{
+/* span{
   margin-left: 5px;
+} */
+.initiallyHiddenBlock{ /* cacher la div filtres au départ */
+  display: none;
 }
   
-  
+.logo2{
+  width: 45px;
+  height: 45px;
+  padding: 5px 5px;
+}
 
+.leaflet-control-mapquest-directions {
+  position: absolute;
+  z-index: 2000;
+  overflow: -moz-scrollbars-vertical;
+  overflow-x: visible;
+  overflow-y: scroll;
+  -moz-box-sizing: content-box;
+  padding: 10px 50px 10px 10px;
+  height: 50%;
+  background-color: hsla(0,0%,55%,.2);
+  -webkit-overflow-scrolling: touch;
+  margin-top: 83%;
+  margin-right:30px; 
+}
+span.envoi{
+  color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('success.png');
+}
+
+.search-ahead-form .form-wrap {
+  position: relative;
+  top: -1px;
+  display: block;
+  overflow: hidden;
+  box-sizing: unset;
+  width: 80%;
+  height: 34px;
+  border: 1px solid #b7b7b7;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.reverse-container {
+    position: relative;
+    top: -67px;
+    right: -82%;
+    display: block;
+    margin-bottom: -32px;
+    z-index: 100000;
+}
     
-  
-  
+span.echec{
+  color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('error.png');
+}
 
+h4{
+  color: #54afdd;
+  margin-left: 15px;
+}
+
+b{
+  color: orange;
+}
+p{
+  margin-left: 15px;
+}
+
+span{
+  color: orange;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.choix{
+  color: black;
+  font-size: 15px;
+}
+
+#notes{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
