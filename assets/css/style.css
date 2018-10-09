@@ -68,10 +68,11 @@ body{
 
 header{
   width: 100%;
-  height:8vh;
+  height:10vh;
   display: flex;  
   z-index: 400000000;
   /*box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 15px rgba(0,0,0,0.19);*/
+  box-shadow: 0px 15px 10px -15px rgb(126, 126, 126);
 }
 
 .marginHeader{
@@ -81,25 +82,28 @@ header{
   align-items: center;
   justify-content: space-between;
   margin: auto;
+
   
 }
 .slogan{
   color: orange;
-  font-size: 12px;
+  font-size: 13px;
   margin: 0;
   font-family: "RobotoItalic"
 }
 
+.logo2{
+  width:60px;
+}
 
 
 /* map display */
 .heightMain{
-  height:84vh;
   width: 100vw;
-  
+  height: 80vh;
 }
 #map { 
-  height: 84vh;
+  height: 82vh;
   position: relative;
   width: 100vw;
 }
@@ -125,55 +129,55 @@ header{
 
 
 
-
-
 /* Navbar */
 
-nav{
-  width: 100%;
-  height: 8vh;
-  margin: auto;
-  box-shadow: 0 6px 6px rgba(0,0,0,0.23),0 10px 20px rgba(0,0,0,0.19);
-}
+
 .linkNav{
-  width : 80%;
+  width: 100%;
+  height: 10vh;
+  box-shadow: 0px -15px 10px -15px rgb(126, 126, 126);  
+  position:fixed;
   display:flex;
-  justify-content: space-between;
   margin: auto;
   align-items: center;
-
+  justify-content: center;
+  font-size: 10px;
 }
-/*
-.hauteur{ height du footer de la page contact" 
-  height: 33px;
-}*/
+
+.navLink{
+  margin: 0;
+}
+
 .searchNav{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 50%;
+  height: 100%;
+  margin-bottom: 12px;
 }
 
 .usNav{
   border-left: 1px solid rgba(0, 0, 0, 0.356);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 50%;
+  height: 88%;
+  margin-bottom: 12px;
 }
-.navLink{
-  font-size: 10px;
-  margin: 1px;
-  display: block;
-}
+
 .iconeNav{
-  margin: 5px;
+  margin: 2px;
 }
-nav a{
+.linkNav a{
   text-decoration: none;
-  font-size: 12px;
+  font-size: 10px;
   color: black;
 }
+
 
 /* clicked filtres */
 
@@ -184,7 +188,8 @@ nav a{
   background-color: white;
   width: 100vw;
   height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+
 }
 #exit{
   cursor: pointer;
@@ -199,20 +204,11 @@ nav a{
 }
 .selectFiltres{
   width: 80vw;
-  margin: 5px
+  height: 40px;
+  margin-bottom: 30px;
 }
 
-#recherche{/* bouton recherche */
-  padding: 5px 8px;
-  background-color: #54afdd;
-  color: #ffffff;
-  border: none;
-  text-transform: uppercase;
-  margin: 5px;
-  border-radius: 2px;
 
-  
-}
 /* clicked lieu */
 
 #click-tournage {
@@ -229,11 +225,9 @@ nav a{
   
 }
   h2{
+    margin-left: 15px;
     text-align: left;
     font-size: 18px;
-    font-family: verdana, serif;
-    margin-left: auto;
-    
   }
   #kisomnou{
     width: 350px;
@@ -241,7 +235,7 @@ nav a{
   }
   #bonjour{
     width: 350px;
-    margin-left: 30px;
+    margin-left: px;
   }
 
   #formulaire{
@@ -257,67 +251,58 @@ nav a{
     flex-wrap: wrap;
     margin-bottom: 10px;
   }
-  textarea{
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-left: 10px;
-    color: rgb(201, 28, 94);
-    padding-top: 3px;
-    width: 300px;
+  textarea, input{   
+    margin: 25px 0 30px 0;
+    width: 100%;
+    height: 50px;
     border: none;
     border-bottom: 1px solid rgb(116, 110, 110);
-   
+    font-size: 14px;
   }
-  #cestparti{ /* bouton c'est parti */
-    padding: 5px 8px;
-    background-color: #54afdd;
-    color: #ffffff;
-    border: none;
-    text-transform: uppercase;
-    width : 200px;
-    margin-left: 60px;
+
+  input::placeholder, textarea::placeholder{
+    font-size: 14px;
+    font-family: 'RobotoReg';
+    color: #54afdd;
   }
+  button{ /* bouton c'est parti */
+    width: 60%;
+      font-size: 13px;
+      margin: 0 10px;
+      border: none;
+      background: #54afdd;
+      color: #fff;
+      cursor: pointer;
+      padding: 15px 30px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      margin: auto;
+  }
+  button:hover {
+      background: #54afdd;
+      transition: ease 0.1s;
+  }
+  
 
   label{
     font-size: 15px;
-    
   }
-  select{ /* menu select */
-    /* margin-top: 5px; */
-    /* margin-left: 10px; */
-    /* margin-bottom: 5px; */
-    /* color: #151617; */
-    /* background-color: #ea2a2a; */
-    /* padding-top: 3px; */
-    /* padding-bottom: 3px; */
-  }
-  
 
 #exit{ /* la croix de la div Filtres */
   background:white;
   border-radius:10px;
   color:black;
-  font-size: 30px;
+  font-size: 20px;
   margin-left: 10px;
   border:none;
 }
 #mail{
-  margin-top: 5px;
-  margin-left: 10px;
-  margin-bottom: 5px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  color: rgb(201, 28, 94);
-  width: 300px;
+  width: 100%;
+  height: 30px;
   border: none;
   border-bottom: 1px solid rgb(116, 110, 110);
 }
-::placeholder {
-  color: #54afdd;
-  font-size: 10px;
-}
+
 p{
   display: flex;
   flex-direction: column;
@@ -326,9 +311,7 @@ p{
 #bonjour{
   margin-left: 10px;
 }
-/* span{
-  margin-left: 5px;
-} */
+
 .initiallyHiddenBlock{ /* cacher la div filtres au départ */
   display: none;
 }
@@ -410,3 +393,4 @@ span{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+

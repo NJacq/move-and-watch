@@ -36,12 +36,12 @@
 
   <div id="filtres" class="initiallyHiddenBlock">
     
-      <button id="exit">X</button>
+      <div id="exit">X</div>
   
    
     <h2 class="titreFiltres">Je recherche</h2>
     <div id="realisateurs">
-      <p class="titreSelect"> un réalisateur:</p>
+      <p class="titreSelect"> un réalisateur :</p>
       <select class="selectFiltres" v-model="selectedRea" v-on:change="loadlist">
         <option value="" selected="true" disabled="disabled">Choisissez un réalisateur</option>
         <option v-for="item in items">
@@ -51,7 +51,7 @@
     </div>
 
     <div id="checkboxArdt">
-      <p class="titreSelect">un arrondissement : </p>
+      <p class="titreSelect">ou un arrondissement : </p>
       <select class="selectFiltres" v-model="checkedArdt" @change="loadlist">
         <option value="" selected="true" disabled="disabled">Choisissez un arrondissement</option>
         <option v-for="item in items">
@@ -60,7 +60,7 @@
       </select>
     </div>
     <div id="format">
-      <p class="titreSelect">plutôt des :</p>
+      <p class="titreSelect">ou plutôt des :</p>
       <div class="select">
       <select class="selectFiltres" v-model="selectedForm" @change="loadlist">
         <option value="" selected="true" disabled="disabled" label="Choisissez un format" />
@@ -70,31 +70,20 @@
       </select>
       </div>
     </div>
-
-    <!-- <div id="notes">
-      <input type="radio" id="choix">
-      <label for="choix">
-        <span class="choix">Je veux voir les lieux les plus appréciés</span>
-      </label>
-    </div> -->
-    <button type="submit" id="recherche">Rechercher</button>
+    <button type="submit" value="research" name="submit" id="recherche"> Envoyer </button>
   </div>
 </main>
 
-
-
-  <nav>
-    <div class="linkNav">
-      <a href="#" class="searchNav">
-        <img src="assets/media/magnifying-glass.png " class="iconeNav" alt="loupe" width="auto" height="17" />
-        <p class="navLink" href="search/">Recherche</p>
-      </a>
-      <a href="us/" class="usNav">
-        <img src="assets/media/logo1.png" class="iconeNav" alt="logo" width="auto" height="17" />
-        <p class="navLink" href="us/">Move & Watch</p>
-      </a>
-    </div>
-  </nav>
+<div class="linkNav hauteur">
+    <a href="home" class="searchNav">
+        <img src="assets/media/magnifying-glass.png " alt="loupe" width="25" height="25"/>
+        <p class="navLink" href="search/">Recherche</p> 
+    </a>  
+    <a href="us/" class="usNav">
+        <img src="assets/media/logo1.png" alt="logo" width="30" height="30"/>
+        <p class="navLink" href="us/">Move & Watch</p> 
+    </a>
+</div>  
 
 
   <!-- charger tous les scripts à la fin -->

@@ -1,11 +1,10 @@
-
-        <?php
+ <?php
 
 if((isset($_POST['submit'])) && (!empty($_POST["mail"])) && (!empty($_POST["message"]))){
    
     $from = $_POST['mail'];;
 
-    $to = "chayma.a@codeur.online";
+    $to = "claire.b@codeur.online";
 
     $message = $_POST['message'];
 
@@ -15,6 +14,6 @@ if((isset($_POST['submit'])) && (!empty($_POST["mail"])) && (!empty($_POST["mess
 
     echo '<span class="envoi">Email envoyé.</span>';
 }else{
-    echo '<span class="echec">Tapez un email valide.</span>';
+    //echo '<span class="echec">Tapez un email valide.</span>';
 }
 ?>
